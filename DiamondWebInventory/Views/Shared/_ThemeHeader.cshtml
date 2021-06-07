@@ -1,0 +1,78 @@
+﻿<header class="row sticky-top sticky-offset" id="header3">
+    <div>
+        <div class="row m0 logo_line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 logo">
+                        <a href="/home/index" class="logo_a">
+                            <!-- <img src="images/dshine-logo.svg" alt="D-shine"> -->
+                            <i class="far fa-gem"></i>
+                            <span>Sparkle Diamond</span>
+                        </a>
+                    </div>
+                    <div class="col-sm-7 searchSec">
+                        <div class="col-sm-12">
+                            <div class="fright wishlistCompare">
+                                <ul class="nav">
+                                    <li>
+                                        <a href="mailto:sparklediamond6820@gmail.com"><p style="color:white; margin-top:5px;">sparklediamond6820@gmail.com</></a>
+                                    </li>
+                                    @if (Session["ClientCd"] == null)
+                                    {
+                                        <li class="">
+                                            <a href="/home/login">
+                                                @*<span class="wish">
+                                                        <i class="fas fa-user"></i>
+                                                    </span>*@
+                                                <span>Login</span>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default m0 navbar-static-top">
+            <div class="container-fluid container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+                        <i class="fas fa-bars"></i> MENU
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="nav navbar-nav text-center">
+                        <li><a href="/home/index/" class="NavItem nav-link">Home</a></li>
+                        <li><a href="/home/aboutus" class="NavItem">About Us</a></li>
+                        <li><a href="/home/liveinventory" class="NavItem">Inventory</a></li>
+                        @*<li><a href="/home/blog" class="NavItem">Blog</a></li>*@
+                        @*<li><a href="/home/product" class="NavItem">Product</a></li>*@
+                        @if (Session["ClientCd"] != null)
+                        {
+                            <li><a href="/home/cartpage" class="NavItem">Cart</a></li>
+                            <li><a href="/home/buypage" class="NavItem">Buy</a></li>
+                        }
+                        <li><a href="/home/contactUs">Contact Us</a></li>
+                        @if (Session["ClientCd"] != null)
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Profile</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a>@Session["EmailID1"]</a></li>
+                                    <li><a href="/home/edituserdata/@Session["ClientCd"]" target="_blank">Edit Profile</a></li>
+                                    <li><a href="/home/logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+</header> <!--Header-->

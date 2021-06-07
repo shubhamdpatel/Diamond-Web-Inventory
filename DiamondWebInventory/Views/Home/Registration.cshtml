@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+<section id="breadcrumbRow" class="row">
+    <h2>Registration</h2>
+</section>
+<div class="">
+    <div class="row">
+        <div class="col-lg-12 Reg">
+            <div class="card">
+                <div class="card-body">
+                    <form id="RegForm">
+                        <h4 class="form-header text-uppercase">
+                            <i class="fa fa-address-book-o"></i>
+                            User Profile
+                        </h4>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @*<label for="txtEmailID1" class="col-form-label">Email Id</label>*@
+                                <input type="email" class="form-control" id="txtEmailID1" name="txtEmailID1" placeholder="Email Id">
+                            </div>
+
+                            <div class="col-sm-3">
+                                @*<label for="txtPassword" class="col-form-label">Password</label>*@
+                                <input type="password" name="txtPassword" class="form-control" id="txtPassword" placeholder="Password">
+                            </div>
+
+                            <div class="col-sm-3">
+                                @*<label for="txtconfirmPwd" class=" col-form-label">Confirm Password</label>*@
+                                <input type="password" id="txtconfirmPwd" name="txtconfirmPwd" class="form-control" placeholder="Confirm Password">
+                            </div>
+                        </div>
+
+                        <h4 class="form-header text-uppercase">
+                            <i class="fa fa-address-book-o"></i>
+                            Personal Details
+                        </h4>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    @*<label for="txtTitle" class="col-form-label">Title</label>*@
+                                    <select class="form-control" id="txtTitle" name="txtTitle">
+                                        <option value="" selected hidden disabled>Title</option>
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Miss.">Miss.</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class="col-form-label">First Name</label>*@
+                                    <input type="text" class="form-control" id="txtFirstname" name="txtFirstname" placeholder="First Name ">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class=" col-form-label">Last Name</label>*@
+                                    <input type="text" class="form-control" id="txtLastname" name="txtLastname" placeholder="Last Name">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-10" class="col-form-label">Business Type</label>*@
+                                    <select class="form-control" id="txtBusiness_Type" name="txtBusiness_Type">
+                                        <option value="" selected hidden disabled>Business Type</option>
+                                        <option value="WHOLESELLER">WHOLESELLER </option>
+                                        <option value="MANUFACTURER"> MANUFACTURER </option>
+                                        <option value="RETAILER"> RETAILER </option>
+                                        <option value="OTHER"> OTHER </option>
+                                    </select>
+                                </div>
+                            </div>                           
+                            <br />
+                            <br />
+                            <div class="form-group ">
+                                <div class="col-sm-3 top">
+                                    @*<label for="input-11" class="col-form-label">Compny Name</label>*@
+                                    <input type="text" class="form-control" id="txtCompnyName" name="txtCompnyName"  placeholder="CompnyName">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class=" col-form-label">Designation</label>*@
+                                    <input type="text" class="form-control" id="txtDesignation" name="txtDesignation"  placeholder="Designation">
+                                </div>
+                            </div>                            
+                        </div>
+
+                        <h4 class="form-header text-uppercase">
+                            <i class="fa fa-address-book-o"></i>
+                            Other Information
+                        </h4>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    @*<label for="input-10" class="col-form-label">Reference Through</label>*@
+                                    <input type="text" class="form-control" id="txtReferenceThrough" placeholder="Reference Through">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class="col-form-label">BirthDate</label>*@
+                                    <input type="text" class="form-control" id="txtBirthDate" name="txtBirthDate" placeholder="BirthDate">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class=" col-form-label">Address</label>*@
+                                    <input type="text" class="form-control" id="txtAddress" name="txtAddress" placeholder="Address">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-10" class="col-form-label">City</label>*@
+                                    <input type="text" class="form-control" id="txtCity" name="txtCity" placeholder="City">
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="form-group">
+                                <div class="col-sm-3 top">
+                                    @*<label for="input-11" class="col-form-label">State</label>*@
+                                    <input type="text" class="form-control" id="txtState" name="txtState" placeholder="Password">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-10" class="col-form-label">Zipcode</label>*@
+                                    <input type="text" class="form-control" id="txtZipcode" name="txtZipcode" placeholder="Zipcode">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class="col-form-label">Phone No.</label>*@
+                                    <input type="text" class="form-control" id="txtPhone_No" name="txtPhone_No" placeholder="Phone No.">
+                                </div>
+
+                                <div class="col-sm-3">
+                                    @*<label for="input-11" class=" col-form-label">Mobile No.</label>*@
+                                    <input type="text" class="form-control" id="txtMobile_No" name="txtMobile_No" placeholder="Mobile No.">
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <div class="col-sm-3 top">
+                                    @*<label for="input-11" class=" col-form-label">Website</label>*@
+                                    <input type="text" class="form-control" id="txtWebsite" name="txtWebsite" placeholder="Website">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            @*<button type="submit" class="btn btn-danger m-1"><i class="fa fa-times"></i> CANCEL</button>*@
+                            <button type="submit" class="btn btn-success m-1" onclick="SaveRegistration()"><i class="fa fa-check-square-o"></i> SAVE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!--End Row-->
+</div><!-- End container-fluid-->

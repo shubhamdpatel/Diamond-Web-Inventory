@@ -1,0 +1,240 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from kvthemes.com/bangodash/color-version/form-step-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Sep 2018 17:23:19 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Registration</title>
+    <!--favicon-->
+    <link rel="icon" href="/AdminContent/assets/images/favicon.ico" type="image/x-icon">
+    <!-- jquery steps CSS-->
+    <link rel="stylesheet" type="text/css" href="/AdminContent/assets/plugins/jquery.steps/css/jquery.steps.css">
+    <!-- simplebar CSS-->
+    <link href="/AdminContent/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS-->
+    <link href="/AdminContent/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- animate CSS-->
+    <link href="/AdminContent/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <!-- Icons CSS-->
+    <link href="/AdminContent/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <!-- Sidebar CSS-->
+    <link href="/AdminContent/assets/css/sidebar-menu.css" rel="stylesheet" />
+    <!-- Custom Style-->
+    <link href="/AdminContent/assets/css/app-style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Start wrapper-->
+    <div id="wrapper">
+        <div class="content-wrapper ml-0">
+            <div class="container-fluid">
+                <form class="form" id="RegForm">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="form-header text-uppercase">
+                                            <i class="fa fa-user-circle-o"></i>
+                                            Account Details
+                                        </h4>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="input-1">Email Id</label>
+                                                <input class="form-control" type="email" id="txtEmailID1" name="txtEmailID1" placeholder="Email Id">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="input-2">Password</label>
+                                                <input type="password" name="txtPassword" class="form-control" id="txtPassword" placeholder="Password">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="input-3">Confirm Password</label>
+                                                <input id="txtconfirmPwd" name="txtconfirmPwd" type="password" class="form-control" placeholder="Confirm Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="form-header text-uppercase">
+                                            <i class="fa fa-user-circle-o"></i>
+                                            Personal Details
+                                        </h4>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-12">
+                                                        <select class="form-control" id="txtTitle" name="txtTitle">
+                                                            <option value="" selected hidden disabled>Title</option>
+                                                            <option value="Mr.">Mr.</option>
+                                                            <option value="Mrs.">Mrs.</option>
+                                                            <option value="Miss.">Miss.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <label for="txtFirstname" class="col-sm-12 col-form-label">Firstname</label>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="txtFirstname"  name="txtFirstname">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <label for="txtLastname" class="col-sm-12 col-form-label">Lastname</label>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="txtLastname" name="txtLastname">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-12">
+                                                        <select class="form-control" id="txtBusiness_Type" name="txtBusiness_Type">
+                                                            <option value="" selected hidden disabled>Business Type</option>
+                                                            <option value="WHOLESELLER">WHOLESELLER </option>
+                                                            <option value="MANUFACTURER"> MANUFACTURER </option>
+                                                            <option value="RETAILER"> RETAILER </option>
+                                                            <option value="OTHER"> OTHER </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <label for="txtCompnyName" class="col-sm-12 col-form-label">CompnyName</label>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="txtCompnyName" name="txtCompnyName">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <label for="txtDesignation" class="col-sm-12 col-form-label">Designation</label>
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="txtDesignation" name="txtDesignation">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="form-header text-uppercase">
+                                            <i class="fa fa-user-circle-o"></i>
+                                            Other Information
+                                        </h4>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label for="txtReferenceThrough" class="col-sm-12 col-form-label">ReferenceThrough</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtReferenceThrough">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtBirthDate" class="col-sm-12 col-form-label">BirthDate</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtBirthDate" name="txtBirthDate">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtAddress" class="col-sm-12 col-form-label">Address</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtAddress" name="txtAddress">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label for="txtCity" class="col-sm-12 col-form-label">City</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtCity" name="txtCity">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtState" class="col-sm-12 col-form-label">State</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtState" name="txtState">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtZipcode" class="col-sm-12 col-form-label">Zipcode</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtZipcode" name="txtZipcode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label for="txtPhone_No" class="col-sm-12 col-form-label">Phone_No</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtPhone_No" name="txtPhone_No">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtMobile_No" class="col-sm-12 col-form-label">Mobile_No</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtMobile_No" name="txtMobile_No">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtWebsite" class="col-sm-12 col-form-label">Website</label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="form-control" id="txtWebsite" name="txtWebsite">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-12">
+                                <div class="form-check">
+                                    <input class="filled-in chk-col-dark" type="checkbox" id="chkTerms" value="option1">
+                                    <label class="form-check-label" for="chkTerms">I have read and agree to the terms and condition</label>
+                                </div>
+                            </div>
+
+                            <div class="form-footer">
+                                <button type="submit" class="btn btn-success m-1" onclick="SaveRegistration()"><i class="fa fa-check-square-o"></i> Save</button>
+                                <button type="submit" class="btn btn-dark m-1"><i class="fa fa-times"></i> Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End container-fluid-->
+        </div><!--End content-wrapper-->
+    </div><!--End wrapper-->
+    <!-- Bootstrap core JavaScript-->
+    <script src="/AdminContent/assets/js/jquery.min.js"></script>
+    <script src="/AdminContent/assets/js/popper.min.js"></script>
+    <script src="/AdminContent/assets/js/bootstrap.min.js"></script>
+    <script src="/AdminContent/assets/js/jquery.validate.min.js"></script>
+    <script src="/Content/js/Custom.js"></script>
+    <!-- simplebar js -->
+    <script src="/AdminContent/assets/plugins/simplebar/js/simplebar.js"></script>
+    <!-- waves effect js -->
+    <script src="/AdminContent/assets/js/waves.js"></script>
+    <!-- sidebar-menu js -->
+    <script src="/AdminContent/assets/js/sidebar-menu.js"></script>
+    <!-- Custom scripts -->
+    <script src="/AdminContent/assets/js/app-script.js"></script>
+    <!--Form Wizard-->
+    <script src="/AdminContent/assets/plugins/jquery.steps/js/jquery.steps.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/AdminContent/assets/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+    <!--wizard initialization-->
+    @*<script src="/AdminContent/assets/plugins/jquery.steps/js/jquery.wizard-init.js" type="text/javascript"></script>*@
+
+</body>
+<!-- Mirrored from kvthemes.com/bangodash/color-version/form-step-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Sep 2018 17:23:23 GMT -->
+</html>

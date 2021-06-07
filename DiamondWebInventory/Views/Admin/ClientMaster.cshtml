@@ -1,0 +1,348 @@
+﻿
+@{
+    ViewBag.Title = "ClientMaster";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumb-->
+        <div class="row pt-2 pb-2">
+        </div>
+        <!-- End Breadcrumb-->
+        <div class="row criteria">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header text-uppercase text-center">Client Master</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="txtSearchFirstName" class="col-sm-1 col-form-label">FirstName</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchFirstName">
+                                </div>
+                                <label for="txtSearchEmail" class="col-sm-1 col-form-label">Email</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchEmail">
+                                </div>
+                                <label for="txtSearchStatus" class="col-sm-1 col-form-label">Status</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchStatus">
+                                </div>
+                                @*<label for="input-10" class="col-sm-1 col-form-label">First Name</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="input-10">
+                                    </div>*@
+                            </div>
+                            @*<div class="form-group row">
+                                    <label for="input-10" class="col-sm-1 col-form-label">First Name</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="input-10">
+                                    </div>
+                                    <label for="input-10" class="col-sm-1 col-form-label">First Name</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="input-10">
+                                    </div>
+                                    <label for="input-10" class="col-sm-1 col-form-label">First Name</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="input-10">
+                                    </div>
+                                    <label for="input-10" class="col-sm-1 col-form-label">First Name</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="input-10">
+                                    </div>
+                                </div>*@
+                        </form>
+                    </div>
+                    <div class="card-body text-right">
+                        <button type="button" class="btn btn-outline-primary waves-effect waves-light m-1 btn-sm" onclick="GetClientMasterListData()">Load</button>
+                        <button type="button" class="btn btn-outline-success waves-effect waves-light m-1 btn-sm" data-toggle="modal" onclick="OpenClientMasteAddForm()">Add</button>
+                        <button type="button" class="btn btn-outline-danger waves-effect waves-light m-1 btn-sm" onclick="ClientMasterResetData()">Clear</button>
+                        <a href="@Url.Action("ExportDataToExcel","Admin",new { Flag="Client" })" class="btn btn-outline-info waves-effect waves-light m-1 btn-sm">Export</a>
+                        @*<button type="button" class="btn btn-outline-info waves-effect waves-light m-1 btn-sm">Export</button>*@
+                    </div>
+                </div>
+
+            </div>
+        </div><!--End Row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-secondary table-header-gray">
+                                    <tr>
+                                        <th scope="col">ClientCd</th>
+                                        <th scope="col">LoginName</th>
+                                        <th scope="col">Password</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">FirstName</th>
+                                        <th scope="col">LastName</th>
+                                        <th scope="col">Birthdate</th>
+                                        <th scope="col">CompnyName</th>
+                                        <th scope="col">Designation</th>
+                                        <th scope="col">Terms</th>
+                                        <th scope="col">CreditDays</th>
+                                        <th scope="col">Commission</th>
+                                        <th scope="col">Brokerage</th>
+                                        <th scope="col">PriceDiscount</th>
+                                        <th scope="col">Discount</th>
+                                        <th scope="col">PriceFormat</th>
+                                        <th scope="col">TaxDetails</th>
+                                        <th scope="col">ReferenceFrom</th>
+                                        <th scope="col">ReferenceThrough</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">City</th>
+                                        <th scope="col">State</th>
+                                        <th scope="col">ZipCode</th>
+                                        <th scope="col">Countrycd</th>
+                                        <th scope="col">Phone_CountryCd</th>
+                                        <th scope="col">Phone_StdCd</th>
+                                        <th scope="col">Phone_No</th>
+                                        <th scope="col">Phone_CountryCd2</th>
+                                        <th scope="col">Phone_StdCd2</th>
+                                        <th scope="col">Phone_No2</th>
+                                        <th scope="col">Fax_CountryCd</th>
+                                        <th scope="col">Fax_StdCd</th>
+                                        <th scope="col">Fax_No</th>
+                                        <th scope="col">Mobile_CountryCd</th>
+                                        <th scope="col">Mobile_No</th>
+                                        <th scope="col">Email_Id1</th>
+                                        <th scope="col">Email_Id2</th>
+                                        <th scope="col">Email_Id3</th>
+                                        <th scope="col">All_Email_Id</th>
+                                        <th scope="col">Website</th>
+                                        <th scope="col">Bussiness_Type</th>
+                                        <th scope="col">InsertedDate</th>
+                                        <th scope="col">CreatedBy</th>
+                                        <th scope="col">UpdatedDate</th>
+                                        <th scope="col">UpdatedBy</th>
+                                        <th scope="col">ApproveStatus</th>
+                                        <th scope="col">ApproveStatusOn</th>
+                                        <th scope="col">ApproveStatusBy</th>
+                                        <th scope="col">StatusUpdatedOn</th>
+                                        <th scope="col">StatusUpdatedBy</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">WholeStockAccess</th>
+                                        <th scope="col">BankDetails</th>
+                                        <th scope="col">RoutingDetails</th>
+                                        <th scope="col">Handle_Location</th>
+                                        <th scope="col">SmId</th>
+                                        <th scope="col">Email_Status</th>
+                                        <th scope="col">LastLoginDate</th>
+                                        <th scope="col">SkypeId</th>
+                                        <th scope="col">QQId</th>
+                                        <th scope="col">EmailSubscr</th>
+                                        <th scope="col">EmailSubscrDate</th>
+                                        <th scope="col">UtypeId</th>
+                                        <th scope="col">UserRights</th>
+                                        <th scope="col">UploadInventory</th>
+                                        <th scope="col">Show_HoldedStock</th>
+                                        <th scope="col">LoginMailAlertOn</th>
+                                        <th scope="col">Show_CertImage</th>
+                                        <th scope="col">App_Id</th>
+                                        <th scope="col">App_Pwd</th>
+                                        <th scope="col">WeChatId</th>
+                                        <th scope="col">Client_Grade</th>
+                                        <th scope="col">WatchList_Priority</th>
+                                        <th scope="col">ShipmentType</th>
+                                        <th scope="col">SecurityPin</th>
+                                        <th scope="col">Online_ClientCd</th>
+                                        <th scope="col">Online_SellerCd</th>
+                                        <th scope="col">IsActive</th>
+                                        <th scope="col">IsDeleted</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ClientMasterData"></tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                                    <ul class="pagination float-left" id="TotalRecords"></ul>
+                                    <ul class="pagination float-right" id="pagenation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Row-->
+    </div>
+    <!-- End container-fluid-->
+</div><!--End content-wrapper-->
+@*Banner Form Model*@
+<!-- Modal -->
+<div class="modal fade" id="ClientMasterModel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fa fa-star"></i>Client Maste</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="ClientMasterForm">
+                <div class="modal-body">
+                    <input type="hidden" id="hdnClientMasteId" value="" />
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="txtLoginName" class="col-sm-12">LoginName</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtLoginName" name="txtLoginName">
+                                @*<label for="txtLoginName" id="hdnLoginName "class="col-sm-12">Shubham</label>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtPassword" class="col-sm-12">Password</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtPassword" name="txtPassword" multiple>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtTitle" class="col-sm-12 col-form-label">Title</label>
+                            <div class="col-sm-12">
+                                <select class="form-control" id="txtTitle" name="txtTitle">
+                                    <option value="" selected hidden disabled>Select</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Miss.">Miss.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtFirstname" class="col-sm-12 col-form-label">Firstname</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtFirstname" name="txtFirstname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="txtLastname" class="col-sm-12 col-form-label">Lastname</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtLastname" name="txtLastname">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtBirthDate" class="col-sm-12 col-form-label">BirthDate</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtBirthDate" name="txtBirthDate">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtCompnyName" class="col-sm-12 col-form-label">CompnyName</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtCompnyName" name="txtCompnyName">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtDesignation" class="col-sm-12 col-form-label">Designation</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtDesignation" name="txtDesignation">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="txtDiscount" class="col-sm-12 col-form-label">Discount</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtDiscount" name="txtDiscount">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtAddress" class="col-sm-12 col-form-label">Address</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtAddress" name="txtAddress">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtCity" class="col-sm-12 col-form-label">City</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtCity" name="txtCity">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtState" class="col-sm-12 col-form-label">State</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtState" name="txtState">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="txtZipcode" class="col-sm-12 col-form-label">Zipcode</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtZipcode" name="txtZipcode">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtPhone_No" class="col-sm-12 col-form-label">Phone_No</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtPhone_No" name="txtPhone_No">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtMobile_No" class="col-sm-12 col-form-label">Mobile_No</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtMobile_No" name="txtMobile_No">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtEmailID1" class="col-sm-12 col-form-label">EmailId1</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtEmailID1" name="txtEmailID1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="txtWebsite" class="col-sm-12 col-form-label">Website</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtWebsite" name="txtWebsite">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="txtBusiness_Type" class="col-sm-12 col-form-label">Bussiness_Type</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtBusiness_Type" name="txtBusiness_Type">
+                            </div>
+                        </div>
+                        @*<div class="col-sm-3">
+                            <label for="txtShow_CertImage" class="col-sm-12 col-form-label">Show_CertImage</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtShow_CertImage" name="txtShow_CertImage">
+                            </div>
+                        </div>*@
+                        <div class="col-sm-3">
+                            <label for="txtStatus" class="col-sm-12 col-form-label">Status</label>
+                            <div class="col-sm-12">
+                                <select class="form-control" id="txtStatus" name="txtStatus">
+                                    <option value="" selected hidden disabled>Select</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<div class="form-row mr-0 ml-2">
+                            <div class="form-group col-6">
+                                <div class="demo-checkbox">
+                                    <input type="checkbox" id="chkIsActive" class="filled-in chk-col-dark" />
+                                    <label for="chkIsActive">Status</label>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" onclick="SaveClientmaster()"><i class="fa fa-check-square-o"></i>Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

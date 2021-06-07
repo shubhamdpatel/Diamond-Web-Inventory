@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title</title>
+    @{ string version = "1.0.7";}
+    <!--favicon-->
+    <link rel="icon" href="/AdminContent/assets/images/favicon.ico" type="image/x-icon">
+    <!-- simplebar CSS-->
+    <link href="/AdminContent/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS-->
+    <link href="/AdminContent/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- animate CSS-->
+    <link href="/AdminContent/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <!-- Icons CSS-->
+    <link href="/AdminContent/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <!-- Sidebar CSS-->
+    <link href="/AdminContent/assets/css/sidebar-menu.css" rel="stylesheet" />
+    <!-- Custom Style-->
+    <link href="/AdminContent/assets/css/app-style.css" rel="stylesheet" />
+    <link href="/AdminContent/assets/css/custom.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="loaderWrapper">
+        <div id="loader">
+            @*<h1>Loading...</h1>*@
+            <img src="/AdminContent/assets/images/Spin.gif" />
+        </div>
+    </div>
+    <!-- Start wrapper-->
+    <div id="wrapper">
+        @Html.Partial("_AdminSideBar")
+        @Html.Partial("_AdminHeader")
+        @RenderBody()
+        @Html.Partial("_AdminFooter")
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/AdminContent/assets/js/popper.min.js"></script>
+    <script src="/AdminContent/assets/js/jquery.min.js"></script>
+    <script src="/AdminContent/assets/js/jquery.min.js"></script>
+    <script src="/AdminContent/assets/js/bootstrap.min.js"></script>
+    <script src="/AdminContent/assets/js/jquery.validate.min.js"></script>
+    <script src="/AdminContent/assets/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+    <!-- simplebar js -->
+    <script src="/AdminContent/assets/plugins/simplebar/js/simplebar.js"></script>
+    <!-- waves effect js -->
+    <script src="/AdminContent/assets/js/waves.js"></script>
+    <!-- sidebar-menu js -->
+    <script src="/AdminContent/assets/js/sidebar-menu.js"></script>
+    <!-- Custom scripts -->
+    <script src="/AdminContent/assets/js/app-script.js"></script>
+    <!--CRUD Custom scripts2 -->
+    <script src="/Content/js/Custom.js?var=@version"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

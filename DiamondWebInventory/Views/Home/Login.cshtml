@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+<section id="breadcrumbRow" class="row">
+    <h2>Login</h2>
+</section>
+
+<section id="contactRow" class="row contentRowPad">
+    <div class="container">
+        <div class="row">
+            <div  class="col-sm-3">
+            </div>
+            <div id="Loginhdn" class="col-sm-6">
+                <div class="card" id="Logincollaps">
+                    <div class="card-header">
+                        <h4 class="contactHeading heading">Login form </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="">
+                            <form id="LoginForm">
+                                <div class="row form-group">
+                                    <div class="col-sm-3 text-right">
+                                        <label class="col-form-label" for="txtEmailID1">Email Id</label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <input type="email" id="txtEmailID1" name="txtEmailID1" class="form-control col-sm-6" placeholder="Email Id">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-sm-3 text-right">
+                                        <label class="col-form-label col-sm-3" for="txtPassword">Passwword</label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <input type="password" id="txtPassword" name="txtPassword" class="form-control col-sm-6" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <b><span class="text-danger font-weight-bold" id="errormsg"></span></b>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-sm-10 text-right" style="margin-left:50px;">
+                                        <a href="#" onclick="ForgotForm()"><b>Forgot password?</b></a>
+                                    </div>
+                                </div>
+
+                                <div class="row m0 text-center">
+                                    <div class="text-right col-sm-12">
+                                        <button type="submit" class="btn btn-secondary btn-sm filled" onclick="Login()">Sign In</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="row m0 text-center pt-3">
+                                    <hr>
+                                    <p class="text-muted">Do not have an account?<b> @Html.ActionLink("Sign Up here", "Registration", "Home", new { area = "" }, null)</b></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Forgothdn" class="col-sm-6 hidden">
+                <div class="card ">
+                    <div class="card-header">
+                        <h4 class="contactHeading heading">Forgot Password</h4>
+                    </div>
+                    <div class="card-body">
+                        <div style="padding-bottom:10px;">
+                            <p class="text-center pb-2">Please enter your email address. You will receive a link to create a new password via email.</p>
+                        </div>
+
+                        <form id="Forgotpwdform">
+                            <div class="form-group criteria">
+                                <div class="row form-group">
+                                    <div class="col-sm-4 text-right">
+                                        <label class="col-form-label" for="txtEmailID1">Email Address</label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" id="txtPsEmail" name="txtPsEmail" class="form-control" placeholder="Email Address">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center pt-3">
+                                <span id="Password" class="text-success" style="font-size:15px"></span>
+                                <span id="Errormsg" class="text-danger" style="font-size:15px"></span>
+                            </div>
+
+                            <div class="row m0 text-center">
+                                <div class="text-right col-sm-11">
+                                    <button type="submit" class="btn btn-secondary btn-sm waves-effect waves-light mt-3" onclick="getPassword()">Get Your Password</button>
+                                </div>
+                            </div>
+                            <div class="text-center pt-3">
+                                <hr>
+                                
+                                <span>Go back to <a href="#" onclick="Loginform()"><b> Sign In</b></a></span>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+            </div>
+
+        </div>
+    </div>
+</section>

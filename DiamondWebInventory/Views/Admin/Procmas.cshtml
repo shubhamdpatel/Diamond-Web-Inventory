@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "Procmas";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumb-->
+        <div class="row pt-2 pb-2">
+
+        </div>
+        <!-- End Breadcrumb-->
+        <div class="row criteria">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header text-uppercase text-center">Procmas</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="txtSearchProcgroup" class="col-sm-1 col-form-label">Procgroup</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchProcgroup">
+                                </div>
+                                <label for="txtSearchProcnm" class="col-sm-1 col-form-label">Procnm</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchProcnm">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body text-right">
+                        <button type="button" class="btn btn-outline-primary waves-effect waves-light m-1 btn-sm" onclick="GetProcmasListData()">Load</button>
+                        <button type="button" class="btn btn-outline-success waves-effect waves-light m-1 btn-sm" data-toggle="modal" onclick="OpenProcmasAddForm()">Add</button>
+                        <button type="button" class="btn btn-outline-danger waves-effect waves-light m-1 btn-sm" onclick="ProcmasResetData()">Clear</button>
+                        <a href="@Url.Action("ExportDataToExcel","Admin",new { Flag="Procmos" })" class="btn btn-outline-info waves-effect waves-light m-1 btn-sm">Export</a>
+                        @*<button type="button" class="btn btn-outline-info waves-effect waves-light m-1 btn-sm">Export</button>*@
+                    </div>
+                </div>
+
+            </div>
+        </div><!--End Row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-secondary table-header-gray">
+                                    <tr>
+                                        <th scope="col">Procgroup</th>
+                                        <th scope="col">Ppoccd</th>
+                                        <th scope="col">Procnm</th>
+                                        <th scope="col">Shortnm</th>
+                                        <th scope="col">Ord</th>
+                                        <th scope="col">IsActive</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ProcmasListData"></tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                                    <ul class="pagination float-left " id="TotalRecords"> </ul>
+                                    <ul class="pagination float-right" id="pagenation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Row-->
+    </div>
+    <!-- End container-fluid-->
+
+</div><!--End content-wrapper-->
+@*Banner Form Model*@
+<!-- Modal -->
+<div class="modal fade" id="ProcmasModel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fa fa-star"></i>Procmas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="Procmos">
+                <div class="modal-body">
+                    <input type="hidden" id="hdnProcmasId" value="" />
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="input-1" class="col-sm-12">Procgroup</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtProcgroup" name="txtProcgroup">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="input-2" class="col-sm-12">Proccd</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtProccd" name="txtProccd">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="input-3" class="col-sm-12 col-form-label">Procnm</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtProcnm" name="txtProcnm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="input-3" class="col-sm-12 col-form-label">Shortnm</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtShortnm" name="txtShortnm">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="input-3" class="col-sm-12 col-form-label">Order</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="txtOrder" name="txtOrder">
+                            </div>
+                        </div>
+                        @*<div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">Fancy_Color_Status</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtFancy_Color_Status">
+                                </div>
+                            </div>*@
+                    </div>
+                    @*<div class="form-group row">
+                            <div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">Is Changeable</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtIsChangeable">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">Fancy_Color</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtFancy_Color">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">Fancy_Intensity</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtFancy_Intensity">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">Fancy_Overtone</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtFancy_Overtone">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">F_CTS</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtF_CTS">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="input-3" class="col-sm-12 col-form-label">T_CTS</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="txtT_CTS">
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="form-row mr-0 ml-2">
+                        <div class="form-group col-6">
+                            <div class="demo-checkbox">
+                                <input type="checkbox" id="chkIsActive" class="filled-in chk-col-dark" />
+                                <label for="chkIsActive">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" onclick="SaveProcmas()"><i class="fa fa-check-square-o"></i>Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

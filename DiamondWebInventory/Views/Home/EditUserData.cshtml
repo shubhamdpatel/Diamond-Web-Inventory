@@ -1,0 +1,160 @@
+﻿@model DiamondWebInventory.Models.ClientMasterModel
+@{
+    ViewBag.Title = "EditUserData";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+@if (Model != null)
+{
+    <section id="breadcrumbRow" class="row">
+        <h2>Edit Profile</h2>
+        <div class="row pageTitle m0">
+            <div class="container">
+                <h4 class="fleft">Edit Profile</h4>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid">
+        <div class="modal-header">
+            <h5 class="modal-title"><i class="fa fa-star">@Model.LoginName&nbsp;@*|&nbsp;@Model.EmailID1*@</i></h5>
+        </div>
+        <form id="EditUserForm">
+            <div class="modal-body">
+                <input type="hidden" id="hdnClientId" value="@Model.ClientCd" />
+                <div class="form-group row">
+                    <h4 class="form-header text-uppercase">
+                        <i class="fa fa-user-circle-o"></i>
+                        Personal Info
+                    </h4>
+                    <div class="col-sm-3">
+                        <label for="txtTitle" class="col-sm-12 col-form-label">Title</label>
+                        <div class="col-sm-12">
+                            @*<select class="form-control" id="txtTitle">
+                                    <option value="none" selected disabled hidden>Select</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Miss.">Miss.</option>
+                                </select>*@
+                            @Html.DropDownListFor(m => m.Title, new SelectList(ViewBag.TitleList, "val", "Name", Model.Title), new { @class = "form-control", @id = "drdTitle" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtFirstname" class="col-sm-12 col-form-label">Firstname</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtFirstname" name="txtFirstname" value="@Model.FirstName">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtLastname" class="col-sm-12 col-form-label">Lastname</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtLastname" name="txtLastname" value="@Model.LastName">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtTitle" class="col-sm-12 col-form-label">Business Type</label>
+                        <div class="col-sm-12">
+                            @*<select class="form-control" id="txtBusiness_Type">
+                                    <option value="none" selected disabled hidden>Select</option>
+                                    <option value="WHOLESELLER">WHOLESELLER </option>
+                                    <option value="MANUFACTURER"> MANUFACTURER </option>
+                                    <option value="RETAILER"> RETAILER </option>
+                                    <option value="OTHER"> OTHER </option>
+                                </select>*@
+                            @Html.DropDownListFor(m => m.BussinessType, new SelectList(ViewBag.BussinessTypeList, "val", "Name", Model.BussinessType), new { @class = "form-control", @id = "drdBusiness_Type" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                        <label for="txtCompnyName" class="col-sm-12 col-form-label">CompnyName</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtCompnyName" name="txtCompnyName" value="@Model.CompanyNm">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtDesignation" class="col-sm-12 col-form-label">Designation</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtDesignation" name="txtDesignation" value="@Model.Designation">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <h4 class="form-header text-uppercase">
+                        <i class="fa fa-user-circle-o"></i>
+                        Other Information
+                    </h4>
+                    <div class="col-sm-3">
+                        <label for="txtReferenceThrough" class="col-sm-12 col-form-label">Reference Through</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtReferenceThrough" name="txtReferenceThrough" value="@Model.ReferenceThrough">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtBirthDate" class="col-sm-12 col-form-label">BirthDate</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtBirthDate" name="txtBirthDate" value="@Model.Birthdate">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtAddress" class="col-sm-12 col-form-label">Address</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtAddress" name="txtAddress" value="@Model.Address">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtCity" class="col-sm-12 col-form-label">City</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtCity" name="txtCity" value="@Model.City">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                        <label for="txtState" class="col-sm-12 col-form-label">State</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtState" name="txtState" value="@Model.State">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="txtZipcode" class="col-sm-12 col-form-label">Zipcode</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtZipcode" name="txtZipcode" value="@Model.Zipcode">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtPhone_No" class="col-sm-12 col-form-label">Phone_No</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtPhone_No" name="txtPhone_No" value="@Model.Phone_No">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="txtMobile_No" class="col-sm-12 col-form-label">Mobile_No</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtMobile_No" name="txtMobile_No" value="@Model.Mobile_No">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-3">
+                        <label for="txtWebsite" class="col-sm-12 col-form-label">Website</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtWebsite" name="txtWebsite" value="@Model.Website">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" onclick="SaveClienData()">
+                    <i class="fa fa-check-square-o"></i>Update
+                </button>
+            </div>
+        </form>
+    </div>
+}
+
+
+

@@ -1,0 +1,392 @@
+﻿@model DiamondWebInventory.Models.StoneListModel
+@{
+    ViewBag.Title = "DiamondDetails";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+<section id="breadcrumbRow" class="row">
+    <h2>Diamond Details</h2>
+</section>
+@if (Model != null)
+{
+    <div class="bg-contrast">
+        <div class="row">
+            <div class="img-info col-lg-3 col-md-3 col-sm-12 ">
+                <div class="left_img">
+                    <div class="top_img col-lg-12 col-md-12 col-sm-6 col-xm-12">
+                        <img src="/AdminContent/assets/images/ROUND.jpg" id="topimage" alt="">
+                        <span id="lblwidth" class="clswidth">@Model.WIDTH</span>
+                        <span id="lbllength" class="clslength">@Model.LENGTH</span>
+
+                    </div>
+                    <div class="bottom_img col-lg-12 col-md-12 col-sm-6 col-xm-12">
+                        <img src="/AdminContent/assets/images/ROUND (1).jpg" id="sideview" style="" alt="">
+                        <span id="lblpvdepth" class="clsPvdepth">@Model.PAVILION</span>
+                        <span id="lblCRheight" class="clscrheight">@Model.HEIGHT</span>
+                        <span id="lblgirdle" class="clsgirdle">@Model.GIRDLE</span>
+                        <span id="lbldtable" class="clstablewidth">@Model.DIATABLE</span>
+                        <span id="lbldepthh" class="clstotaldepth">@Model.DEPTH</span>
+                        <span id="lblgirdleper" class="clsgirdleper">@Model.GIRDLEPER</span>
+                    </div>
+                    <ul class="green_menu">
+                        <li>
+                            <a href="https://1145253691.rsc.cdn77.org/Dirgh/Lab/5367153696.jpg" id="lnkviewcertifiacte1" target="_blank"><i class="fa fa-certificate" aria-hidden="true"></i></a>
+                        </li>
+
+                        <li id="liimage">
+                            <a href="" id="lnkviewimage" onclick="" class="diamondvideo"><i id="lnkimage" class="fa fa-eye" aria-hidden="true"></i></a>
+                        </li>
+
+                        <li id="livideo">
+                            <a href="https://1145253691.rsc.cdn77.org/Dirgh/Videos/5367153696.mp4" id="lnkvideobg" target="_blank"><i id="lnkvideo" class="fa fa-video" aria-hidden="true"></i></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="diamond-info col-lg-9">
+                <div class="right_content">
+                    <div class="header">
+                        <table>
+                            <tr class="tblheader">
+                                <td>Stone ID.</td>
+                                <td id="stoneid">@Model.STONEID</td>
+                                <td id="diamond_status" class="">[ Availabile ]</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                               <div class="d_table serch-table">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 tbl_cont">
+                            <table cellpadding="0" cellspacing="0" id="tbldetail">
+                                <tbody>
+                                    <tr>
+                                        <td>CERTIFICATE :</td>
+                                        <td><span id="spancrt">@Model.CERTIFICATE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CERTIFICATE NO. :</td>
+                                        <td><span id="spancrt">@Model.CERTNO</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOCATION  : </td>
+                                        <td><span id="Span_natts">@Model.LOCATION</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SHAPE :</td>
+                                        <td><span id="spancrt">@Model.SHAPE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CTS :</td>
+                                        <td><span id="span_Table">@Model.CTS</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>COLOR :</td>
+                                        <td><span id="span_shape">@Model.COLOR</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CLARITY :</td>
+                                        <td><span id="span_depth">@Model.CLARITY</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CUT : </td>
+                                        <td><span id="span_color">@Model.CUT</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>POLISH :</td>
+                                        <td><span id="span_crown">@Model.POLISH</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SYM : </td>
+                                        <td><span id="span_clarity">@Model.SYM</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>FLOURENCE  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.FLOURENCE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td> FL_COLOR :</td>
+                                        <td>
+                                            <span id="span_lastmodify">@Model.FL_COLOR</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>INCLUSION  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.INCLUSION</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HA  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.HA</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LUSTER  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.LUSTER</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GIRDLE  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.GIRDLE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GIRDLE_CONDITION  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.GIRDLE_CONDITION</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CULET  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.CULET</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MILKY  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.MILKY</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SHADE  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.SHADE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NATTS  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.NATTS</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NATURAL  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.NATURAL</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DEPTH  : </td>
+                                        <td><span id="Span_HeartArrow">@Model.DEPTH</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <table cellpadding="0" cellspacing="0" id="tbldetail">
+                                <tbody>
+                                    <tr>
+                                        <td>DIATABLE :</td>
+                                        <td><span id="Span_pav_angle">@Model.DIATABLE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LENGTH : </td>
+                                        <td><span id="span_cut">@Model.LENGTH</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WIDTH :</td>
+                                        <td><span id="Span_Culet_size">@Model.WIDTH</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PAVILION  : </td>
+                                        <td><span id="Span_polish">@Model.PAVILION</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CROWN :  </td>
+                                        <td><span id="Span_LH">@Model.CROWN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PAVANGLE :</td>
+                                        <td><span id="Span_Star">@Model.PAVANGLE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CROWNANGLE  : </td>
+                                        <td><span id="Span_fluo">@Model.CROWNANGLE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>HEIGHT  : </td>
+                                        <td><span id="Span_natts">@Model.HEIGHT</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PAVHEIGHT :</td>
+                                        <td>
+                                            <span id="span_bgm">@Model.PAVHEIGHT</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>CROWNHEIGHT  : </td>
+                                        <td><span id="Span_natts">@Model.CROWNHEIGHT</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>MEASUREMENT  : </td>
+                                        <td><span id="Span_natts">@Model.MEASUREMENT</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RATIO  : </td>
+                                        <td><span id="Span_natts">@Model.RATIO</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PAIR : </td>
+                                        <td><span id="Span_natts">@Model.PAIR</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>STAR_LENGTH  : </td>
+                                        <td><span id="Span_natts">@Model.STAR_LENGTH</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LOWER_HALF  : </td>
+                                        <td><span id="Span_natts">@Model.LOWER_HALF</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>KEY_TO_SYMBOL  : </td>
+                                        <td><span id="Span_natts">@Model.KEY_TO_SYMBOL</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>REPORT_COMMENT  : </td>
+                                        <td><span id="Span_natts">@Model.REPORT_COMMENT</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAPARATE  : </td>
+                                        <td><span id="Span_natts">@Model.RAPARATE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAPAAMT  : </td>
+                                        <td><span id="Span_natts">@Model.RAPAAMT</span></td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>ASKRATE_FC  : </td>
+                                        <td><span id="Span_natts">@Model.ASKRATE_FC</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <table cellpadding="0" cellspacing="0" id="tbldetail">
+                                <tbody>
+                                    <tr>
+                                        <td>ASKDISC_FC : </td>
+                                        <td><span id="Span_Measurement">@Model.ASKDISC_FC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ASKAMT_FC : </td>
+                                        <td><span id="Span_symm">@Model.ASKAMT_FC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>COSTRATE_FC :</td>
+                                        <td><span id="span_shade">@Model.COSTRATE_FC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>COSTDISC_FC : </td>
+                                        <td><span id="Span_Girdle">@Model.COSTDISC_FC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>COSTAMT_FC :</td>
+                                        <td><span id="span_girdle_thick">@Model.COSTAMT_FC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WEB_CLIENTID:</td>
+                                        <td><span id="span_Pair_Stock">@Model.WEB_CLIENTID</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>wl_rej_status:</td>
+                                        <td><span id="span_cert_issue_date">@Model.wl_rej_status</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GIRDLEPER :</td>
+                                        <td><span id="span_eyeclean">@Model.GIRDLEPER</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DIA :</td>
+                                        <td><span id="span_eyeclean">@Model.DIA</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>COLORDESC :</td>
+                                        <td><span id="span_eyeclean">@Model.COLORDESC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BARCODE :</td>
+                                        <td><span id="span_eyeclean">@Model.BARCODE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>INSCRIPTION :</td>
+                                        <td><span id="span_eyeclean">@Model.INSCRIPTION</span></td>
+                                    </tr>
+                                 
+                                    <tr>
+                                        <td>TINGE :</td>
+                                        <td><span id="span_eyeclean">@Model.TINGE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EYE_CLN :</td>
+                                        <td><span id="span_eyeclean">@Model.EYE_CLN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TABLE_INCL :</td>
+                                        <td><span id="span_eyeclean">@Model.TABLE_INCL</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <table cellpadding="0" cellspacing="0" id="tbldetail">
+                                <tbody>
+                                    <tr>
+                                        <td>SIDE_INCL :</td>
+                                        <td><span id="spantreatment">@Model.SIDE_INCL</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TABLE_BLACK :</td>
+                                        <td><span id="span_inclustion">@Model.TABLE_BLACK</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SIDE_BLACK :</td>
+                                        <td><span id="Span_Inscription">@Model.SIDE_BLACK</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TABLE_OPEN:</td>
+                                        <td><span id="span_keytosymbol">@Model.TABLE_OPEN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SIDE_OPEN : </td>
+                                        <td><span id="Span_Comment">@Model.SIDE_OPEN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PAV_OPEN : </td>
+                                        <td><span id="Span_Comment">@Model.PAV_OPEN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EXTRA_FACET : </td>
+                                        <td><span id="Span_Comment">@Model.EXTRA_FACET</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>INTERNAL_COMMENT : </td>
+                                        <td><span id="Span_Comment">@Model.INTERNAL_COMMENT</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>POLISH_FEATURES : </td>
+                                        <td><span id="Span_Comment">@Model.POLISH_FEATURES</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SYMMETRY_FEATURES : </td>
+                                        <td><span id="Span_Comment">@Model.SYMMETRY_FEATURES</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GRAINING : </td>
+                                        <td><span id="Span_Comment">@Model.GRAINING</span></td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>RATEDISC : </td>
+                                        <td><span id="Span_Comment">@Model.RATEDISC</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GRADE : </td>
+                                        <td><span id="Span_Comment">@Model.GRADE</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CLIENT_LOCATION : </td>
+                                        <td><span id="Span_Comment">@Model.CLIENT_LOCATION</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ORIGIN : </td>
+                                        <td><span id="Span_Comment">@Model.ORIGIN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BGM : </td>
+                                        <td><span id="Span_Comment">@Model.BGM</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

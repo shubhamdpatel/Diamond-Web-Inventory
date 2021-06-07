@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+
+<section id="breadcrumbRow" class="row">
+    <h2>contact us</h2>
+    <div class="row pageTitle m0">
+        <div class="container">
+            <h4 class="fleft">contact us</h4>
+        </div>
+    </div>
+</section>
+
+<section id="contactRow" class="row contentRowPad">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row m0">
+                    <h4 class="contactHeading heading">contact</h4>
+                </div>
+                <div class=" contactForm">
+                    <form class="row m0" id="contactForm">
+                        <div class="row form-group ">
+                            <div class="col-sm-6">
+                                <label for="name">Name *</label>
+                                <input type="text" class="form-control" name="txtname" id="txtname">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="email">Email *</label>
+                                <input type="email" class="form-control" name="txtemail" id="txtemail">
+                            </div>
+                        </div>
+
+                        <div class="row m0 form-group">
+                            <label for="subject">subject *</label>
+
+                            <input type="text" class="form-control" name="txtsubject" id="txtsubject">
+                        </div>
+                        <div class="row m0">
+                            <label for="message">your message</label>
+                            <textarea name="txtmessage" id="txtmessage" class="form-control"></textarea>
+                        </div>
+                                              <button class="btn btn-dark filled" type="submit" onclick="SendFeedback()">send message</button>
+                    </form>
+                    <div id="success">
+                        <span class="green textcenter">
+                            Your message was sent successfully! I will be in touch as soon as I can.
+                        </span>
+                    </div>
+                    <div id="error">
+                        <span>
+                            Something went wrong, try refreshing and submitting the form again.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row m0">
+                    <h4 class="contactHeading heading">contact info style</h4>
+                </div>
+                <div class="media contactInfo">
+                    <div class="media-left">
+                        <i class="fas fa-map-marker"></i>
+                    </div>
+                    <div class="media-body">
+                        <h5 class="heading">where to reach us</h5>
+                        <p>You can reach us at the following address:</p>
+                        <h5>B-103, Sai Milan Recidency E-2, Godadara Naher Rd, beside Raj Empire, Maharana Pratap Nagar, Chowk, Surat, Gujarat 395010
+                        </h5>
+                    </div>
+                </div> <!--contactInfo-->
+                <div class="media contactInfo">
+                    <div class="media-left">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="media-body">
+                        <h5 class="heading">Email us </h5>
+                        <p>Email your issues and suggestion for the following email addresses: </p>
+                        <a href="mailto:sparklediamond6820@gmail.com"><h5>sparklediamond6820@gmail.com</h5></a>
+                    </div>
+                </div> <!--contactInfo-->
+                <div class="media contactInfo">
+                    <div class="media-left">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="media-body">
+                        <h5 class="heading">need to call us?</h5>
+                        <p>From Monday to Friday,10:00 AM - 8:00 PM, call us at:</p>
+                        <a href="tel:+919033180795" class="Blondie"><h5>9033180795</h5></a>
+                    </div>
+                </div> <!--contactInfo-->
+                <div class="media contactInfo">
+                    <div class="media-left">
+                        <i class="fas fa-question"></i>
+                    </div>
+                    <div class="media-body">
+                        <h5 class="heading">we have great support</h5>
+                        <p>We provide the best Quality of products to you.We are always here to help our lovely customers.We ship our products anywhere with more secure. We provide the best Quality of products to you.</p>
+                    </div>
+                </div> <!--contactInfo-->
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14881.6883162707!2d72.8726353!3d21.1753855!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfecdf16e82c24b02!2sSparkle%20Web!5e0!3m2!1sen!2sin!4v1593069882263!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>

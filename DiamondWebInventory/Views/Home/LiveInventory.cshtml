@@ -1,0 +1,356 @@
+﻿
+@{
+    ViewBag.Title = "LiveInventory";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+<style>
+    [type=checkbox]:checked, [type=checkbox]:not(:checked) {
+        position: unset !important;
+        left: -9999px;
+        opacity: 1 !important;
+    }
+
+    #InventoryData {
+        display: none;
+    }
+
+    .cartmsg {
+        font-size: 20px;
+        padding-top: 15px;
+        font-weight: bold;
+    }
+</style>
+<section id="breadcrumbRow" class="row">
+    <h2>Inventory</h2>
+    <div class="row pageTitle m0">
+        <div class="container">
+            <h4 class="fleft">Inventory</h4>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="SearchContainer">
+        <div id="SearchCriteria_Section">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 d-block m-auto CritariaField " id="Shape_Section">
+                    <div class="ShapeImgBox CritariaInput searchcontent">
+                        <label class="CritariaLabel">Shape</label>
+                        <div id="{{item.Procnm}}" ng-click="addremoveclass('Shape_Section',item)" data-value="{{item.Procnm}}" class="items" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'SHAPE'} :true ">
+                            <img ng-src="/Content/Images/{{item.Procnm}}.png" onerror="this.src = '/Content/Images/OWN.png'" class="img-responsive ShapeImg" alt="{{item.Procnm}}" title="{{item.Procnm}}">
+                            <label class="hidden-md Shapelbl">{{item.Procnm}}</label>
+                        </div>
+                        @*<div class="items" data-value="OTHER" ng-click="addremoveOtherDiamondclass()" id="OtherDiamond">
+                                <img data-toggle="tooltip" src="/Content/Images/others50.png" class='img-responsive ShapeImg' alt='Other' title='Other'>
+                                <label class="hidden-xs shapelbl">Other</label>
+                            </div>*@
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12  d-block m-auto CritariaField " id="Lab_Section">
+                    <div class="ShapeImgBox searchcontent">
+                        <label class="CritariaLabel">Lab</label>
+                        <div id="{{item.Procnm}}" ng-click="addremoveclass('Lab_Section',item)" data-value="{{item.Procnm}}" class="certificate" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'CERTIFICATE'} :true ">
+                            <img ng-src="/Content/Images/{{item.Procnm}}.png" onerror="this.src = '/Content/Images/OWN.png'" class="img-responsive ShapeImg" alt="{{item.Procnm}}" title="{{item.Procnm}}">
+                            <label class="hidden-xs certificatelbl ">{{item.Procnm}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-2 lg-lg-4 col-md-4 col-sm-12 col-12 d-block m-auto CritariaField Col2_LeftSide">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-12" id="Carat_Section">
+                        <div class="CritariadLabel">
+                            <label class="CritariaLabel">Carat</label>
+                        </div>
+                        <div class="form-group textbox ">
+                            <input type="text" class="form-control Carat" id="SearchFromCarat" placeholder="FromCarat">
+                            <input type="text" class="form-control Carat" id="SearchToCarat" placeholder="ToCarat">
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-12" id="Cut_Section">
+                        <div class="CritariaInput">
+                            <label class="CritariaLabel">Cut</label>
+                            <div id="{{item.Procnm}}" ng-click="addremoveclass('Cut_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'CUT'} :true ">
+                                <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-12" id="Polish_Section">
+                        <div class="CritariaInput">
+                            <label class="CritariaLabel">Polish</label>
+                            <div id="{{item.Procnm}}" ng-click="addremoveclass('Polish_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'POLISH'} :true ">
+                                <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-12" id="Symmetry_Section">
+                        <div class="CritariaInput">
+                            <label class="CritariaLabel">Symmetry</label>
+                            <div id="{{item.Procnm}}" ng-click="addremoveclass('Symmetry_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'SYMMETRY'} :true ">
+                                <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-10 lg-lg-8 col-md-8 col-sm-12 col-12 d-block m-auto row" id="Col2_RightSide">
+                    <div class=" col-xl-12 lg-lg-12 col-md-12 col-sm-12 col-12 d-block m-auto CritariaField TopPart">
+                        <div id="Color_Section">
+                            <div class="CritariaInput">
+                                <label class="CritariaLabel">Color</label>
+                                <div id="{{item.Procnm}}" ng-click="addremoveclass('Color_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'COLOR'} :true ">
+                                    <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="Clarity_Section">
+                            <div class="CritariaInput">
+                                <label class="CritariaLabel">Clarity</label>
+                                <div id="{{item.Procnm}}" ng-click="addremoveclass('Clarity_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'CLARITY'} :true ">
+                                    <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" col-xl-12 lg-lg-12 col-md-12 col-sm-12 col-12 d-block m-auto CritariaField BottomPart">
+                        <div class=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 ">
+                            <div id="Fl_Intensity_Section">
+                                <div class="col-md-12 col-sm-12 col-12 CritariaInput">
+                                    <label class="CritariaLabel">Fluorescence Intensity</label>
+                                    <div id="{{item.Procnm}}" ng-click="addremoveclass('Fl_Intensity_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'FL_INTENSITY'} :true ">
+                                        <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="Fl_Color_Section">
+                                <div class="col-md-12 col-sm-12 col-12 CritariaInput">
+                                    <label class="CritariaLabel">Fluorescence Color</label>
+                                    <div id="{{item.Procnm}}" ng-click="addremoveclass('Fl_Color_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'Fl_COLOR'} :true ">
+                                        <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn ">{{item.Procnm}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 Fl_RightSide">
+                            <div class="form-row CritariaInput">
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <div>
+                                        <label for="input-1" class="CritariaLabel">StoneId</label>
+                                    </div>
+                                                                       <textarea class="form-control StoneId" id="SearchStoneId"></textarea>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <div class="Certi_No">
+                                        <label for="input-2" class="CritariaLabel ">Certi No.</label>
+                                    </div>
+                                                                        <textarea cols="10" class="form-control" id="SearchCertiNo"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 d-block m-auto CritariaField Col3_LeftSide">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" id="Special_Section">
+                        <div class="SpecialButton m-1">
+                            <label class="CritariaLabel">Special</label>
+                            <div id="{{item.Procnm}}" ng-click="SpecialAddremoveclass('Special_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'SPECIAL'} :true ">
+                                <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn">{{item.Procnm}}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" id="Price_Section">
+                        <div class="CritariadLabel">
+                            <label class="CritariaLabel">Price($)</label>
+                        </div>
+                        <div class="form-group textbox">
+                            <input type="text" class="form-control Carat" id="SearchFromPrice" placeholder="From Price">
+                            <input type="text" class="form-control Carat" id="SearchToPrice" placeholder="To Price">
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 " id="Amount_Section">
+                        <div class="">
+                            <label class="CritariaLabel">Total Amount($)</label>
+                        </div>
+
+                        <div class="form-group textbox">
+                            <input type="text" class="form-control StoneId" id="SearchFromAmt" placeholder="From Amt">
+                            <input type="text" class="form-control CertiNo" id="SearchToAmt" placeholder="To Amt">
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" id="Dicount_Section">
+                        <div class="">
+                            <label class="CritariaLabel">Discount(%)</label>
+                        </div>
+                        <div class="form-group textbox">
+                            <input type="text" class="form-control StoneId" id="SearchFromDisc" placeholder="From Discount">
+                            <input type="text" class="form-control CertiNo" id="SearchToDisc" placeholder="To Discount">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 CritariaField" id="ShowItems_Section">
+                    <div class="row">
+                        <div class="CritariadLabel">
+                            <label class="CritariaLabel">Show Items</label>
+                        </div>
+                        <div class="CritariaInput Dropdown ">
+                            <div class="form-row">
+                                <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <select class="form-control showitem" id="Status">
+                                        <option value="">All</option>
+                                        <option value="N">New Arrival</option>
+                                        <option value="-">-</option>
+                                    </select>
+                                </div>
+                                <div class="form-group  col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <select class="form-control showitem" id="Status1">
+                                        <option value="">All</option>
+                                        <option value="M">Memo</option>
+                                        <option value="H">Hold</option>
+                                        <option value="A">Available</option>
+                                        <option value="UP">UpComing</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row CritariaField">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 d-block m-auto" id="Location_Section">
+                    <div class="CritariadLabel">
+
+                    </div>
+                    <div class="CritariaInput">
+                        <label class="CritariaLabel">Location</label>
+                        <div id="{{item.Procnm}}" ng-click="addremoveclass('Location_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'LOCATION'} :true ">
+                            <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn ">{{item.Procnm}}</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 d-block m-auto" id="H_A_Section">
+                    <div class="SpecialButton m-1">
+                        <label class="CritariaLabel">H&A</label>
+                        <div id="{{item.Procnm}}" ng-click="addremoveclass('H_A_Section',item)" data-value="{{item.Procnm}}" class="CaratButton m-1" title="{{item.Procnm}}" ng-repeat="item in lstProcmasModel | filter :  {Procgroup :'H&A'} :true ">
+                            <button type="button" class="btn btn-round btn-outline-secondary waves-effect waves-light m-1 InventoryCritariaBtn ">{{item.Procnm}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="GetInventoryListData()">Submit</button>
+                <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="InventoryClear()">Clear</button>
+            </div>
+        </div>
+
+        <div class="InvContent" id="InventoryData">
+            <div class="row">
+                <div class="col-lg-12 InventoryTabl">
+                    <div class="InventoryTabl_btn form-group text-center">
+                        <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" onclick="HideShow('modify')">Modify Search</button>
+                        <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="RefreshInvPage()">New Search</button>
+                        <a href="@Url.Action("ExportDataToExcel","Admin",new { Flag="Stone" })" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm">Export Excel</a>
+                        <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="AddToCartBuy('CART')">Add To Cart</button>
+                        <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="AddToCartBuy('BUY')">Add To Buy</button>
+
+                        <div class="form-group col-12 text-center cartmsg">
+                            <span class="text-danger" id="cartmsg"></span>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped INVTBL">
+                            <thead class="table-secondary table-header-gray">
+                                <tr>
+                                    <th></th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">LOCATION</th>
+                                    <th scope="col">LAB</th>
+                                    <th scope="col">REPORT<br />NO.</th>
+                                    <th scope="col">MEDIA</th>
+                                    <th scope="col">STONEID</th>
+                                    <th scope="col">SHAPE</th>
+                                    <th scope="col">CTS</th>
+                                    <th scope="col">COLOR</th>
+                                    <th scope="col">CLARITY</th>
+                                    <th scope="col">CUT</th>
+                                    <th scope="col">POLISH</th>
+                                    <th scope="col">SYM</th>
+                                    <th scope="col">FLOUR.</th>
+                                    <th scope="col">RAP</th>
+                                    <th scope="col">RATE</th>
+                                    <th scope="col">DISC<br />(%)</th>
+                                    <th scope="col">AMOUNT<br />($)</th>
+                                    <th scope="col">DEPTH</th>
+                                    <th scope="col">TABLE<br />(%)</th>
+                                    <th scope="col">MEASUREMENT</th>
+                                    <th scope="col">GIRDLE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-currentPage="{{currentPage}}" ng-repeat="item in lstInventoryModel.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                                    <td scope="col"><input type="checkbox" id="chk_{{item.STONEID}}" ng-change="StoneCheck(item)" ng-model="checked" class="filled-in chk-col-success" /></td>
+                                    <td scope="col"><i class='btn btn-outline-secondary btn-sm status' aria-hidden='true'>{{item.LEGEND1}}</i>&nbsp<i class='btn btn-outline-secondary btn-sm' aria-hidden='true'>{{item.LEGEND2}}</i></td>
+                                    <td scope="col" id="Location">{{item.LOCATION}}</td>
+                                    <td scope="col">{{item.CERTIFICATE}}</td>
+                                    <td scope="col">{{item.CERTNO}}</td>
+                                    <td scope="col" class="MediaIcon">
+                                        <a href="https://www.gia.edu/report-check?reportno={{item.CERTNO}}" target="_blank">
+                                            <i class="fa fa-certificate" aria-hidden="true"></i>
+                                        </a>
+                                        &nbsp;
+                                        <a href="https://1145253691.rsc.cdn77.org/Dirgh/Videos/5367153696.mp4" id="lnkvideobg" target="_blank">
+                                            <i class="fa fa-video" aria-hidden='true'></i>
+                                        </a>
+                                        &nbsp;
+                                        <a href="/home/diamonddetails/{{item.STONEID}}" target="_blank">
+                                            <i class="far fa-gem"></i>
+                                        </a>
+                                    </td>
+                                    <td scope="col" id="StoneId">{{item.STONEID}}</td>
+                                    <td scope="col">{{item.SHAPE}}</td>
+                                    <td scope="col">{{item.CTS}}</td>
+                                    <td scope="col">{{item.COLOR}}</td>
+                                    <td scope="col">{{item.CLARITY}}</td>
+                                    <td scope="col">{{item.CUT}}</td>
+                                    <td scope="col">{{item.POLISH}}</td>
+                                    <td scope="col">{{item.SYM}}</td>
+                                    <td scope="col">{{item.FLOURENCE}}</td>
+                                    <td scope="col">{{item.CERTNO}}</td>
+                                    <td scope="col">{{item.RAPARATE}}</td>
+                                    <td scope="col">{{item.CERTNO}}</td>
+                                    <td scope="col" class="text-right">{{item.RAPAAMT}}</td>
+                                    <td scope="col">{{item.DEPTH}}</td>
+                                    <td scope="col">{{item.DIATABLE}}</td>
+                                    <td scope="col">{{item.MEASUREMENT}}</td>
+                                    <td scope="col">{{item.GIRDLE}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+                    <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage"></pagination>
+                    <pre>Showing {{viewby}} records of {{totalItems}} entries</pre>
+                </div>
+            </div>
+        </div>
+    </div><!--End Row-->
+</div>

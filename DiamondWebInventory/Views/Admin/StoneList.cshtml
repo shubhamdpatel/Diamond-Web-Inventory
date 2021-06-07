@@ -1,0 +1,244 @@
+﻿
+@{
+    ViewBag.Title = "StoneList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumb-->
+        <div class="row pt-2 pb-2">
+            @*<div class="col-sm-9">
+                    <h4 class="page-title">Banner</h4>
+                </div>*@
+            @*<div class="col-sm-3">
+                    <div class="btn-group float-sm-right">
+                        <button type="button" class="btn btn-outline-primary waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Setting</button>
+                        <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="javaScript:void();" class="dropdown-item">Action</a>
+                            <a href="javaScript:void();" class="dropdown-item">Another action</a>
+                            <a href="javaScript:void();" class="dropdown-item">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="javaScript:void();" class="dropdown-item">Separated link</a>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+        <!-- End Breadcrumb-->
+        <div class="row criteria">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header text-uppercase text-center">StoneList</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="txtSearchStoneId" class="col-sm-1 col-form-label">Stone Id</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchStoneId">
+                                </div>
+                                <label for="txtSearchCertificate" class="col-sm-1 col-form-label">Certificate </label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" id="txtSearchCertificate">
+                                        <option value=""selected hidden disabled>Select</option>
+                                        <option value="GIA">GIA</option>
+                                        <option value="IGI">IGI</option>
+                                        <option value="HRD">HRD</option>
+                                    </select>
+                                </div>
+                                <label for="txtSearchCertificateNo" class="col-sm-1 col-form-label">Certificate No.</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="txtSearchCertificateNo">
+                                </div>
+                                <label for="txtSearchShape" class="col-sm-1 col-form-label">Shape</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" id="txtSearchShape">
+                                        <option value=""selected hidden disabled>Select</option>
+                                        <option value="Round">Round</option>
+                                        <option value="Princess">Princess</option>
+                                        <option value="Pear">Pear</option>
+                                        <option value="Cushion">Cushion </option>
+                                        <option value="Emerald">Emerald</option>
+                                        <option value="Earquise">Earquise</option>
+                                        <option value="Radiant">Radiant </option>
+                                        <option value="Oval">Oval </option>
+                                        <option value="Heart">Heart  </option>
+                                        <option value="Other">Other </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="txtSearchColor" class="col-sm-1 col-form-label">Color</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" id="txtSearchColor">
+                                        <option value=""selected hidden disabled>Select</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                        <option value="E">E</option>
+                                        <option value="H">H </option>
+                                        <option value="J">J</option>
+                                        <option value="K">K</option>
+                                        <option value="L">L </option>
+                                        <option value="M">M </option>
+                                        <option value="N">N  </option>
+                                        <option value="Other">Other </option>
+                                    </select>
+                                </div>
+                                <label for="txtSearchClarity" class="col-sm-1 col-form-label">Clarity</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" id="txtSearchClarity">
+                                        <option value=""selected hidden disabled>Select</option>
+                                        <option value="FL">FL</option>
+                                        <option value="F">F</option>
+                                        <option value="VVS1">VVS1</option>
+                                        <option value="VVS2">VVS2 </option>
+                                        <option value="VS1">VS1</option>
+                                        <option value="VS2">VS2</option>
+                                        <option value="SI1">SI1</option>
+                                        <option value="SI2">SI2</option>
+                                        <option value="I1">I1</option>
+                                        <option value="NONE">NONE</option>
+                                        <option value="I2">I2</option>
+                                        <option value="Other">Other </option>
+                                    </select>
+                                </div>
+                                <label for="txtSearchCaret" class="col-sm-1 col-form-label">Caret</label>
+                                <div class="col-sm-2 input-daterange input-group">
+                                    <input type="text" class="form-control" id="FromSearchCaret">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">TO</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="ToSearchCaret1">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body text-right">
+                        <button type="button" class="btn btn-outline-primary waves-effect waves-light m-1 btn-sm" onclick="GetProductListData()">Load</button>
+                        <button type="button" class="btn btn-outline-success waves-effect waves-light m-1 btn-sm">Add</button>
+                        <button type="button" class="btn btn-outline-danger waves-effect waves-light m-1 btn-sm" onclick="ProductResetData()">Clear</button>
+                        <a href="@Url.Action("ExportDataToExcel","Admin",new { Flag="Stone" })" class="btn btn-outline-info waves-effect waves-light m-1 btn-sm">Export</a>
+                        @*<button type="button" class="btn btn-outline-info waves-effect waves-light m-1 btn-sm">Export</button>*@
+                    </div>
+                </div>
+
+            </div>
+        </div><!--End Row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-secondary table-header-gray">
+                                    <tr>
+                                        <th scope="col">COMPCD</th>
+                                        <th scope="col">STONEID</th>
+                                        <th scope="col">SHAPE</th>
+                                        <th scope="col">CTS</th>
+                                        <th scope="col">COLOR</th>
+                                        <th scope="col">CLARITY</th>
+                                        <th scope="col">CUT</th>
+                                        <th scope="col">POLISH</th>
+                                        <th scope="col">SYM</th>
+                                        <th scope="col">FLOURENCE</th>
+                                        <th scope="col">FL_COLOR</th>
+                                        <th scope="col">INCLUSION</th>
+                                        <th scope="col">HA</th>
+                                        <th scope="col">LUSTER</th>
+                                        <th scope="col">GIRDLE</th>
+                                        <th scope="col">GIRDLE_CONDITION</th>
+                                        <th scope="col">CULET</th>
+                                        <th scope="col">MILKY</th>
+                                        <th scope="col">SHADE</th>
+                                        <th scope="col">NATTS</th>
+                                        <th scope="col">NATURAL</th>
+                                        <th scope="col">DEPTH</th>
+                                        <th scope="col">DIATABLE</th>
+                                        <th scope="col">LENGTH</th>
+                                        <th scope="col">WIDTH</th>
+                                        <th scope="col">PAVILION</th>
+                                        <th scope="col">CROWN</th>
+                                        <th scope="col">PAVANGLE</th>
+                                        <th scope="col">CROWNANGLE</th>
+                                        <th scope="col">HEIGHT</th>
+                                        <th scope="col">PAVHEIGHT</th>
+                                        <th scope="col">CROWNHEIGHT</th>
+                                        <th scope="col">MEASUREMENT</th>
+                                        <th scope="col">RATIO</th>
+                                        <th scope="col">PAIR</th>
+                                        <th scope="col">STAR_LENGTH</th>
+                                        <th scope="col">LOWER_HALF</th>
+                                        <th scope="col">KEY_TO_SYMBOL</th>
+                                        <th scope="col">REPORT_COMMENT</th>
+                                        <th scope="col">CERTIFICATE</th>
+                                        <th scope="col">CERTNO</th>
+                                        <th scope="col">RAPARATE</th>
+                                        <th scope="col">RAPAAMT</th>
+                                        <th scope="col">CURDATE</th>
+                                        <th scope="col">LOCATION</th>
+                                        <th scope="col">LEGEND1</th>
+                                        <th scope="col">LEGEND2</th>
+                                        <th scope="col">LEGEND3</th>
+                                        <th scope="col">ASKRATE_FC</th>
+                                        <th scope="col">ASKDISC_FC</th>
+                                        <th scope="col">ASKAMT_FC</th>
+                                        <th scope="col">COSTRATE_FC</th>
+                                        <th scope="col">COSTDISC_FC</th>
+                                        <th scope="col">COSTAMT_FC</th>
+                                        <th scope="col">WEB_CLIENTID</th>
+                                        <th scope="col">wl_rej_status</th>
+                                        <th scope="col">GIRDLEPER</th>
+                                        <th scope="col">DIA</th>
+                                        <th scope="col">COLORDESC</th>
+                                        <th scope="col">BARCODE</th>
+                                        <th scope="col">INSCRIPTION</th>
+                                        <th scope="col">NEW_CERT</th>
+                                        <th scope="col">MEMBER_COMMENT</th>
+                                        <th scope="col">UPLOADCLIENTID</th>
+                                        <th scope="col">REPORT_DATE</th>
+                                        <th scope="col">NEW_ARRI_DATE</th>
+                                        <th scope="col">TINGE</th>
+                                        <th scope="col">EYE_CLN</th>
+                                        <th scope="col">TABLE_INCL</th>
+                                        <th scope="col">SIDE_INCL</th>
+                                        <th scope="col">TABLE_BLACK</th>
+                                        <th scope="col">SIDE_BLACK</th>
+                                        <th scope="col">TABLE_OPEN</th>
+                                        <th scope="col">SIDE_OPEN</th>
+                                        <th scope="col">PAV_OPEN</th>
+                                        <th scope="col">EXTRA_FACET</th>
+                                        <th scope="col">INTERNAL_COMMENT</th>
+                                        <th scope="col">POLISH_FEATURES</th>
+                                        <th scope="col">SYMMETRY_FEATURES</th>
+                                        <th scope="col">GRAINING</th>
+                                        <th scope="col">IMG_URL</th>
+                                        <th scope="col">RATEDISC</th>
+                                        <th scope="col">GRADE</th>
+                                        <th scope="col">CLIENT_LOCATION</th>
+                                        <th scope="col">ORIGIN</th>
+                                        <th scope="col">BGM</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ProductData"></tbody>
+
+                            </table>
+                        </div>
+                        <div class="row mu-2">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                                    <ul class="pagination float-left" id="TotalRecords"></ul>
+                                    <ul class="pagination float-right" id="pagenation"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End Row-->
+    </div>
+    <!-- End container-fluid-->
+</div><!--End content-wrapper-->

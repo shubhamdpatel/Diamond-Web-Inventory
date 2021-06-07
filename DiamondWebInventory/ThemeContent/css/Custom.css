@@ -1,0 +1,775 @@
+/*Theme Editing*/
+/*Error */
+.error {
+    font-size: 12px;
+}
+
+.sticky-offset {
+    top: 56px;
+}
+
+.Reg {
+    margin-bottom: -28px;
+}
+
+#RegForm {
+    margin-left: 10px;
+}
+
+    #RegForm .btn-danger {
+        color: red !important;
+    }
+
+    #RegForm button .btn-danger:hover {
+        color: white;
+    }
+
+/*Login Form*/
+#LoginForm {
+    margin-top: 10PX;
+}
+
+    #LoginForm label {
+        font-size: 13px;
+    }
+
+    #LoginForm a {
+        color: #008CFF;
+    }
+
+    #LoginForm button {
+        color: #150d0d;
+        /*padding: 2px 50px;*/
+        margin-right: 31px;
+        border-radius: 4px;
+    }
+
+        #LoginForm button:hover {
+            color: white;
+        }
+
+/*Forgotpwdform*/
+
+#Forgotpwdform a {
+    font-size: 15px;
+    /*padding-top:10px!important;*/
+    color: #008cff;
+}
+
+#Forgotpwdform button {
+    margin-right: 35px;
+    border-radius: 4px;
+}
+
+#Forgotpwdform .btn-primary {
+    color: #008cff;
+}
+
+    #Forgotpwdform .btn-primary:hover {
+        color: white;
+    }
+
+#Forgotpwdform .btn-secondary {
+    color: black;
+}
+
+    #Forgotpwdform .btn-secondary:hover {
+        color: white;
+    }
+
+/*Contact us*/
+#contactForm button {
+    color: black;
+}
+
+    #contactForm button:hover {
+        color: white !important;
+    }
+
+#EditUserForm button {
+    color: gray;
+}
+
+    #EditUserForm button:hover {
+        color: white;
+    }
+/*End Contact*/
+/*About Us*/
+.row .polishing {
+    margin-top: 30px;
+}
+
+.manufacturing, .polishing {
+    margin-bottom: 20px;
+    font-family: 'Questrial', sans-serif;
+    color: #777;
+    line-height: 24px;
+}
+/*End Abt*/
+
+span.OrDevider {
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.btnsg {
+    color: gray;
+}
+
+body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.RegBtn {
+    color: #000000;
+    background-color: #008cff;
+    border-radius: 5px;
+}
+
+.CompanyName {
+    font-size: 44px;
+    line-height: 52px;
+    color: #008cff;
+}
+
+@media screen and (max-width: 767px) {
+    #header .logo_line .searchSec, #header .logo_line .searchSec > div, #header3 .logo_line .searchSec, #header3 .logo_line .searchSec > div {
+        padding-right: 0px;
+    }
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.RegBtn {
+    color: aqua;
+    background-color: #008cff;
+    border-radius: 5px;
+}
+
+.LogBtn {
+    color: aqua;
+    background-color: #008cff;
+    width: 70px;
+    padding: 0px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+/*Live Inventory Page*/
+
+.SearchContainer {
+    max-width: 1420px;
+    margin-left: 0px;
+    padding: 15px;
+}
+
+.CritariaField {
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
+
+#Shape_Section {
+    margin-right: 10px;
+    max-width: 65.8%;
+}
+
+    #Shape_Section .Shapelbl {
+        text-align: center;
+        margin-left: -5px;
+        /*font-size:8px;*/
+        /*margin-top:5px*/
+    }
+
+.CritariaFieldInput {
+    width: 90.333333%;
+    padding-left: 16px;
+}
+
+.ShapeImg {
+    width: 33px;
+    height: 33px;
+}
+
+.ShapeImgBox ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .ShapeImgBox ul li {
+        margin-right: 2px;
+        padding: 2px;
+        float: left;
+        width: 9%;
+    }
+
+.SpecialCritariaField {
+    width: 70px;
+    font-size: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+
+.SpecialButton {
+    margin-top: 0px;
+}
+
+.savelist {
+    width: 70%;
+}
+
+.showitem {
+    width: 100%;
+}
+
+.totalammount {
+    margin-left: -35px;
+}
+
+.CritariaFieldLabel {
+    width: 10%;
+    padding-top: 2px;
+    margin-right: 57px;
+    padding-right: 15px;
+    display: inherit;
+}
+
+.irs-grid-text {
+    font-size: 12px;
+    color: black;
+}
+
+.irs-min, .irs-max {
+    display: none;
+}
+
+.CritariaField2 {
+    border: thin solid #f9f4f4;
+    height: 57px;
+}
+
+.Active {
+    background-color: #808080;
+    height: 27px;
+    width: 70px;
+    border-radius: 15px;
+    color: white;
+    /*margin-right: 1px;*/
+    text-align: center;
+}
+
+.ShapeImg {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+#Shape_Section .Active, #Lab_Section .Active {
+    background-color: #808080;
+    height: 35px;
+    width: 40px;
+    border-radius: 7px;
+    margin-right: 5px;
+    /*padding-left: 7px;*/
+}
+
+.textbox {
+    display: inline-flex;
+}
+
+.FromCarat input {
+    width: 70%;
+    margin-left: 10px;
+    padding-right: 0px;
+    margin-right: 10PX;
+}
+
+.ToCarat {
+    padding-left: 0px;
+}
+
+    .ToCarat input {
+        width: 70%;
+        margin-left: 10px;
+    }
+
+.ShapeImgBox {
+    display: block;
+}
+
+.items, .certificate {
+    display: inline-block;
+    margin-left: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.CaratButton {
+    display: inline-block;
+}
+
+.certificatelbl {
+    padding-left: 10px;
+}
+
+.InventoryCritariaBtn {
+    width: 68px;
+    font-size: 10px;
+    margin: 1px;
+    margin-bottom: 4px;
+    padding: 5px;
+    line-height: 15px;
+    color: black;
+}
+
+    .InventoryCritariaBtn:hover {
+        background-color: #808080;
+    }
+
+.CritariadLabel {
+    width: 50%;
+    padding-top: 2px;
+    margin-right: 57px;
+    padding-right: 15px;
+    display: inherit;
+}
+
+.CritariaLabel {
+    font-family: 'Avenir Roman';
+    font-size: 11px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.CritariaInput {
+    width: 100%;
+    padding-left: 5px;
+}
+
+.InventoryTabl {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.Col2_LeftSide {
+    margin-right: -6px;
+    padding-bottom: 36px;
+}
+
+#Carat_Section, #Cut_Section, #Polish_Section, #Symmetry_Section {
+    margin-left: -14px;
+}
+
+#Col2_RightSide .TopPart, .BottomPart {
+    width: 102.4%;
+    margin-left: 15px;
+}
+
+#Fl_Intensity_Section, #Fl_Color_Section {
+    margin-left: -15px;
+}
+
+.Fluorescence_Secttion {
+    padding-left: 1px;
+}
+
+.Fl_RightSide {
+    margin-left: -37px;
+}
+
+.Certi_No {
+    padding: 0px;
+}
+
+.Col3_LeftSide {
+    margin-right: 13px;
+    width: 65.58%;
+}
+
+#Special_Section {
+    margin-left: -8px;
+}
+
+    #Special_Section .CritariaLabel {
+        margin-left: 2px;
+    }
+
+#Location_Section {
+    margin-left: -14px;
+}
+
+#Carat_Section .textbox {
+    margin-left: 9px;
+    margin-bottom: 4px;
+}
+
+/*#Shape_Section .ShapeImgBox {
+    margin-left: 6PX;
+}
+
+#Lab_Section .ShapeImgBox {
+    margin-left: 10PX;
+}*/
+
+/*#Color_Section,#Clarity_Section{
+    margin-left:0px;
+}*/
+#Price_Section .CritariaLabel {
+    font-family: 'Avenir Roman';
+    font-size: 12px;
+    margin-left: 43px;
+    margin-bottom: 0px;
+}
+
+
+
+#Location_Section .CritariaInput {
+    margin-left: 16px;
+}
+
+#Location_Section .CritariaLabel {
+    margin-left: 4px;
+}
+
+#ShowItems_Section .CritariaLabel {
+    margin-left: 10px;
+}
+
+#H_A_Section .CritariaLabel {
+    margin-left: 10px;
+}
+
+#SearchFromPrice {
+    padding: 11px;
+    height: 33px;
+}
+
+#SearchToPrice {
+    padding: 11px;
+    height: 33px;
+}
+
+#Amount_Section .CritariaLabel {
+    font-family: 'Avenir Roman';
+    font-size: 12px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+#Dicount_Section .CritariaLabel {
+    font-family: 'Avenir Roman';
+    font-size: 12px;
+    margin-left: 34px;
+    margin-bottom: 0px;
+}
+/*Live Inventory End*/
+td.MediaIcon a {
+    color: black;
+}
+
+.contentRowPad .container-fluid {
+    height: 74px;
+    background: lavender;
+}
+
+#hww .col-sm-4 h5 {
+    margin-left: 100px;
+}
+
+/*Inventory Start*/
+.InvContent {
+    text-align: center;
+    font-size: 10px;
+}
+
+.INVTBL .btn-sm {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0px 6px;
+    height: 20px;
+    line-height: 18px;
+    margin-top: 0px;
+}
+
+.INVTBL thead tr th, .INVTBL tbody tr td {
+    padding: 4px;
+    padding-top: 10px;
+}
+
+.InventoryTabl_btn {
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+
+    .InventoryTabl_btn button {
+    }
+
+
+/*Inventory End*/
+
+@media (min-width:992px) and (max-width:1200px) {
+    .ShapeImg {
+        margin-right: 9px;
+    }
+
+    #Lab_Section {
+        width: 33%;
+    }
+
+    .Certi_No {
+        width: 70px;
+    }
+
+    /*.InventoryCritariaBtn {
+        width: 47px;
+    }*/
+
+    #Special_Section {
+        margin-right: -150px;
+    }
+
+    #Dicount_Section .CritariaLabel {
+        margin-left: 12px;
+    }
+
+    #Price_Section .CritariaLabel {
+        margin-left: 23px;
+    }
+
+    #Amount_Section .CritariaLabel {
+        margin-left: -2px;
+        font-size: 8px;
+    }
+
+    #ShowItems_Section {
+        width: 32.9%;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    #Shape_Section {
+        max-width: 100%;
+    }
+
+    #Polish_Section {
+        margin-left: 1px;
+    }
+
+    #Symmetry_Section {
+        margin-left: -1px;
+    }
+
+    .Col3_LeftSide {
+        width: 100%;
+    }
+
+    #Col2_RightSide .TopPart, .BottomPart {
+        width: 104%;
+        margin-left: 0px;
+    }
+
+    #Special_Section {
+        margin-left: 100px;
+    }
+
+    #Price_Section {
+        margin-left: -102px;
+    }
+
+        #Price_Section .CritariaLabel {
+            margin-left: 131px;
+        }
+
+    #Amount_Section .CritariaLabel {
+        margin-left: 85px;
+    }
+
+    #Dicount_Section .CritariaLabel {
+        margin-left: 109px;
+    }
+
+    #ShowItems_Section .CritariaLabel {
+        margin-left: 45px;
+    }
+
+    #ShowItems_Section .CritariaInput {
+        margin-left: 23px;
+    }
+}
+
+@media (min-width:575px) and (max-width:767px) {
+    #Shape_Section {
+        max-width: 100%;
+        margin-right: 0px;
+    }
+
+    #Col2_RightSide .TopPart, .BottomPart {
+        width: 100%;
+    }
+
+    .Col3_LeftSide {
+        width: 100%;
+    }
+}
+
+@media (min-width:480px) and (max-width:574px) {
+    #Shape_Section {
+        margin-right: 0px;
+        max-width: 100%;
+    }
+
+    #Col2_RightSide .TopPart, .BottomPart {
+        width: 100%;
+    }
+
+    .Col3_LeftSide {
+        width: 100%;
+    }
+}
+
+@media (max-width:479px) {
+    #Shape_Section {
+        margin-right: 0px;
+        max-width: 100%;
+    }
+
+    .Col2_LeftSide {
+        margin-right: 0px;
+    }
+
+    #Carat_Section .CritariaLabel {
+        margin-left: 9px;
+    }
+
+    #Col2_RightSide .TopPart, .BottomPart {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .Col3_LeftSide {
+        width: 100%;
+    }
+
+    .Fl_RightSide {
+        margin-left: -27px;
+    }
+
+    #Special_Section .CritariaLabel {
+        margin-left: 3px;
+    }
+
+    #Price_Section .CritariaLabel, #Dicount_Section .CritariaLabel {
+        margin-left: 0px;
+    }
+
+    #Price_Section, #Amount_Section, #Dicount_Section {
+        margin-left: -6px;
+    }
+
+    #ShowItems_Section .Dropdown {
+        margin-left: 9px;
+    }
+
+    #ShowItems_Section .CritariaLabel {
+        margin-left: 28px;
+    }
+
+    #Location_Section {
+        margin-left: -19px;
+    }
+
+        #Location_Section .CritariaLabel {
+            margin-left: 5px;
+        }
+
+    #H_A_Section {
+        margin-left: 3px;
+    }
+
+    .InventoryTabl_btn button {
+        margin-bottom: 10px;
+        margin-left: 5px;
+        max-width: 170px;
+    }
+
+    .InventoryTabl_btn a {
+        margin-bottom: 10px;
+        margin-left: 5px;
+        max-width: 170px;
+    }
+}
+
+/*Lodaer on page*/
+#loaderWrapper {
+    display: none;
+    position: absolute;
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    z-index: 999;
+}
+
+#loader {
+    position: relative;
+    top: 50%;
+}
+
+    #loader img {
+        height: 60px;
+        width: 60px;
+    }
+
+/*Diamond Details*/
+.green_menu a {
+    color: black;
+}
+
+/*Login*/
+@media (max-width:479px) {
+    #LoginForm label {
+        margin-right: 217px;
+    }
+
+    #LoginForm button {
+        margin-right: -13px;
+    }
+
+    #Forgotpwdform label {
+        margin-right: 147px;
+    }
+
+    #Forgotpwdform .btn-secondary {
+        margin-left: 20px;
+    }
+
+    .criteria .col-form-label {
+        font-size: 13px;
+    }
+    /*about*/
+    #hww .col-sm-4 h5 {
+        margin-left: 50px;
+    }
+    #RegForm input,select{
+        margin-bottom:10px;
+    }
+    #RegForm .top input{
+        margin-top:-46px;
+    }
+}
+
+.criteria .col-form-label {
+    font-size: 13px;
+}
+
+
+[type=checkbox]:checked,[type=checkbox]:not(:checked) {
+    position: relative !important;
+    left: 1px !important;
+    opacity: 1 !important;
+}

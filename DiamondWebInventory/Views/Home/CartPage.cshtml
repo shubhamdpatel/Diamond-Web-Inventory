@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "CartPage";
+    Layout = "~/Views/Shared/_ThemeLayout.cshtml";
+}
+<style>
+
+    .cartmsg {
+        font-size: 20px;
+        padding-top: 15px;
+        font-weight: bold;
+    }
+</style>
+<section id="breadcrumbRow" class="row">
+    <h2>Cart Page</h2>
+    <div class="row pageTitle m0">
+        <div class="container">
+            <h4 class="fleft">Inventory</h4>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="InvContent" id="InventoryData">
+        <div class="row">
+            <div class="col-lg-12 InventoryTabl">
+                <div class="InventoryTabl_btn form-group text-center">
+                    <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="DeleteToCartBuy('CARTDELETE')">Delete</button>
+                    <button type="button" class="btn btn-outline-dark waves-effect waves-light m-1 btn-sm" ng-click="AddToCartBuy('B')">Add To Buy</button>
+
+                    <div class="form-group col-12 text-center cartmsg">
+                        <span class="text-danger" id="cartmsg"></span>
+                    </div>
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped INVTBL">
+                        <thead class="table-secondary table-header-gray">
+                            <tr>
+                                <th scope="col"><input type="checkbox" class="filled-in chk-col-danger" /></th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">LOCATION</th>
+                                <th scope="col">LAB</th>
+                                <th scope="col">REPORT<br />NO.</th>
+                                <th scope="col">MEDIA</th>
+                                <th scope="col">STONEID</th>
+                                <th scope="col">SHAPE</th>
+                                <th scope="col">CTS</th>
+                                <th scope="col">COLOR</th>
+                                <th scope="col">CLARITY</th>
+                                <th scope="col">CUT</th>
+                                <th scope="col">POLISH</th>
+                                <th scope="col">SYM</th>
+                                <th scope="col">FLOUR.</th>
+                                <th scope="col">RAP</th>
+                                <th scope="col">RATE</th>
+                                <th scope="col">DISC<br />(%)</th>
+                                <th scope="col">AMOUNT<br />($)</th>
+                                <th scope="col">DEPTH</th>
+                                <th scope="col">TABLE<br />(%)</th>
+                                <th scope="col">MEASUREMENT</th>
+                                <th scope="col">GIRDLE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in lstShoppingCart">
+                                <td scope="col"><input type="checkbox" id="chk_{{item.SC_stoneid}}" ng-change="GetStoneID(item)" ng-model="checked" class="filled-in chk-col-secondary" /></td>
+                                <td scope="col"><i class='btn btn-outline-secondary btn-sm status' aria-hidden='true'>{{item.SC_LEGEND1}}</i>&nbsp<i class='btn btn-outline-secondary btn-sm' aria-hidden='true'>{{item.SC_LEGEND2}}</i></td>
+                                <td scope="col" id="Location">{{item.SC_LOCATION}}</td>
+                                <td scope="col">{{item.SC_CERTIFICATE}}</td>
+                                <td scope="col">{{item.SC_CERTNO}}</td>
+                                <td scope="col" class="MediaIcon">
+                                    <a href="https://www.gia.edu/report-check?reportno={{item.CERTNO}}" target="_blank">
+                                        <i class="fa fa-certificate" aria-hidden="true"></i>
+                                    </a>
+                                    &nbsp;
+                                    <a href="https://1145253691.rsc.cdn77.org/Dirgh/Videos/5367153696.mp4" id="lnkvideobg" target="_blank">
+                                        <i class="fa fa-video" aria-hidden='true'></i>
+                                    </a>
+                                    &nbsp;
+                                    <a href="/home/diamonddetails/{{item.STONEID}}" target="_blank">
+                                        <i class="far fa-gem"></i>
+                                    </a>
+                                </td>
+                                <td scope="col" id="StoneId">{{item.SC_stoneid}}</td>
+                                <td scope="col">{{item.SC_SHAPE}}</td>
+                                <td scope="col">{{item.SC_CTS}}</td>
+                                <td scope="col">{{item.SC_COLOR}}</td>
+                                <td scope="col">{{item.SC_CLARITY}}</td>
+                                <td scope="col">{{item.SC_CUT}}</td>
+                                <td scope="col">{{item.SC_POLISH}}</td>
+                                <td scope="col">{{item.SC_SYM}}</td>
+                                <td scope="col">{{item.SC_FLOURENCE}}</td>
+                                <td scope="col">{{item.SC_CERTNO}}</td>
+                                <td scope="col">{{item.SC_RAPARATE}}</td>
+                                <td scope="col">{{item.SC_CERTNO}}</td>
+                                <td scope="col" class="text-right">{{item.SC_RAPAAMT}}</td>
+                                <td scope="col">{{item.SC_DEPTH}}</td>
+                                <td scope="col">{{item.SC_DIATABLE}}</td>
+                                <td scope="col">{{item.SC_MEASUREMENT}}</td>
+                                <td scope="col">{{item.SC_GIRDLE}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

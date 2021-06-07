@@ -1,0 +1,238 @@
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\csc.exe
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\vbc.exe
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\VBCSCompiler.exe
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.dll.config
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.pdb
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Antlr3.Runtime.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.SqlServer.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Google.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Newtonsoft.Json.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Owin.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Net.Http.Formatting.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Helpers.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.Owin.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.WebHost.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Mvc.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Optimization.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Razor.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Deployment.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Razor.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\WebGrease.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Newtonsoft.Json.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Net.Http.Formatting.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Helpers.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.WebHost.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Mvc.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Optimization.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Razor.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Deployment.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Razor.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Antlr3.Runtime.pdb
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.SqlServer.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Google.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.Owin.xml
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.dll
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.pdb
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csprojResolveAssemblyReference.cache
+E:\Project\Diamond\Diamond\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.ResolveComReference.cache
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\csc.exe
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\vbc.exe
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\VBCSCompiler.exe
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.dll.config
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.pdb
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Antlr3.Runtime.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.SqlServer.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Google.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Newtonsoft.Json.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Owin.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Net.Http.Formatting.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Helpers.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.Owin.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.WebHost.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Mvc.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Optimization.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Razor.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Deployment.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Razor.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\WebGrease.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Newtonsoft.Json.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Net.Http.Formatting.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Helpers.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.WebHost.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Mvc.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Optimization.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Razor.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Deployment.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Razor.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Antlr3.Runtime.pdb
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.SqlServer.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Google.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.Owin.xml
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.ResolveComReference.cache
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.dll
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.pdb
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csprojAssemblyReference.cache
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.CoreCompileInputs.cache
+E:\Project\DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.CopyComplete
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\csc.exe
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\vbc.exe
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\VBCSCompiler.exe
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.dll.config
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\DiamondWebInventory.pdb
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Antlr3.Runtime.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.SqlServer.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Google.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Newtonsoft.Json.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Owin.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Net.Http.Formatting.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Helpers.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.Owin.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.WebHost.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Mvc.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Optimization.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Razor.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Deployment.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Razor.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\WebGrease.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Newtonsoft.Json.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Net.Http.Formatting.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Helpers.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.WebHost.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Mvc.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Optimization.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Razor.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Deployment.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.WebPages.Razor.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Antlr3.Runtime.pdb
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\EntityFramework.SqlServer.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Google.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\bin\System.Web.Http.Owin.xml
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csprojAssemblyReference.cache
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.ResolveComReference.cache
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.CoreCompileInputs.cache
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.csproj.CopyComplete
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.dll
+E:\Project\1. Sparkle Diamond\1. DiamondWebInventory\DiamondWebInventory\DiamondWebInventory\obj\Debug\DiamondWebInventory.pdb

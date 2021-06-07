@@ -1,0 +1,710 @@
+﻿var mController = "/Admin";
+
+/*Admin/Client Login*/
+function AdminLogin() {
+    debugger;
+    var postdata = {
+        Email_Id: $("#txtEmail_Id").val(),
+        Password: $("#txtPassword").val()
+    }
+    $.ajax({
+        url: mController + '/AdminLoginData',
+        type: 'POST',
+        data: postdata,
+        async: false,
+        success: function (data) {
+            debugger;
+            console.log(data)
+            if (data.retVal == "Success") {
+                window.location.href = "/admin/dashboard";
+            }
+            else {
+                $("#errormsg").text(data.retValMsg);
+            }
+        }
+    });
+}
+function Login() {
+    debugger;
+    var postdata = {
+        EmailID1: $("#txtEmailID1").val(),
+        Password: $("#txtPassword").val()
+    }
+    $.ajax({
+        url: mController + '/LoginData',
+        type: 'POST',
+        data: postdata,
+        async: false,
+        success: function (data) {
+            debugger;
+            console.log(data)
+            if (data.retVal == "Success") {
+                window.location.href = "/home/index";
+            }
+            else {
+                $("#errormsg").text(data.retValMsg);
+            }
+        }
+    });
+}
+
+/*View Banner Data*/
+function BannerResetData() {
+    $(".criteria :input").val('');
+    GetBannerListData();
+}
+
+function GetBannerListData(pageno) {
+    debugger;
+    var reqBannerModel = {
+        Title: $("#txtSearchTitle").val(),
+        pageno: pageno
+    }
+    $.ajax({
+        url: mController + '/GetBannerData',
+        data: reqBannerModel,
+        type: 'POST',
+        async: true,
+        //beforeSend: function () {
+        //    Showloader();
+        //},
+        success: function (data) {
+            console.log(data);
+            debugger;
+            var response = data.lstBannerModel;
+            var html = "";
+            $("#BaneerListData").empty();
+            if (response.length > 0) {
+                var Totalrecord = response[0].TotalRecords;
+                var Srno = 1;
+                for (var i = 0; i < response.length; i++) {
+                    html += "<tr>";
+                    html += "<td>" + (i + Srno) + "</td>";
+                    html += "<td>" + response[i].Title + "</td>";
+                    html += '<td><img src="/UploadImage/' + response[i].ImageType + ' " height="80px" width="100px" style="padding-right:10px"/></td>';
+                    html += "<td>" + response[i].ClickUrl + "</td>";
+                    html += "<td>" + response[i].IsActive + "</td>";
+                    html += "<td><a href='#' onclick='OpenEditForm(" + response[i].Id + ")'>Edit</a>&nbsp;<a href='#' onclick='DeleteBanner(" + response[i].Id + ")'>Delete</a></td>";
+                    html += "</tr>";
+                }
+                $("#BaneerListData").append(html);
+                BannerPagination(10, Totalrecord);
+            }
+        },
+        error: function () {
+        },
+        complete: function () {
+            //Hideloader();
+        }
+    });
+}
+
+function BannerPagination(pagesize, totalrecord) {
+    pageSize = pagesize;
+
+    var pageCount = totalrecord / pageSize;
+    $("#pagenation").empty();
+    for (var i = 0 ; i < pageCount; i++) {
+        var index = i + 1;
+        $("#pagenation").append('<li><a href="#" class="page-link" onclick="GetBannerListData(' + index + ')">' + index + '</a></li> ');
+    }
+    $("#TotalRecords").text('Total Records :' + totalrecord);
+    $("#pagenation li").first().find("a").addClass("current");
+}
+/*Insert Banner*/
+function InsertBanner() {
+    debugger;
+    if (window.FormData !== undefined) {
+
+        var fileUpload = $("#Imagefile").get(0);
+        var files = fileUpload.files;
+
+        // Create FormData object
+        var fileData = new FormData();
+
+        // Looping over all files and add it to FormData object
+        for (var i = 0; i < files.length; i++) {
+            fileData.append(files[i].name, files[i]);
+        }
+
+        // Adding one more key to FormData object
+        //fileData.append('username', ‘Manas’);
+        fileData.append('Id', $("#hdnBannerId").val());
+        fileData.append('Title', $("#txtTitle").val());
+        fileData.append('ClickUrl', $("#txtClickUrl").val());
+        fileData.append('IsActive', $("#chkIsActive").is(":checked"));
+        $.ajax(
+        {
+            url: mController + '/SaveBanner',
+            contentType: false,
+            processData: false,
+            data: fileData,
+            type: 'POST',
+            success: function (data) {
+                console.log(data)
+                debugger;
+                $("#BannerModel").modal("hide");
+                GetBannerListData();
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    } else {
+        alert("FormData is not supported.");
+    }
+}
+
+/*Edit Banner*/
+function OpenEditForm(id) {
+    debugger;
+    $.ajax({
+        url: mController + '/GetBannerManageData',
+        data: 'id=' + $.trim(id),
+        type: 'POST',
+        async: true,
+        //beforeSend: function () {
+        //    Showloader();
+        //},
+        success: function (data) {
+            debugger;
+            console.log(data);
+            var response = data.objBannerModel;
+            var Title = response.Title;
+            var ImageType = response.ImageType;
+            var ClickUrl = response.ClickUrl;
+            var IsActive = response.IsActive;
+            $("#hdnBannerId").val(response.Id);
+            $("#txtTitle").val(Title);
+            $("#Imagefile").val('');
+            $("#txtClickUrl").val(ClickUrl);
+            if (IsActive == true) {
+                $("#chkIsActive").prop('checked', true);
+            } else {
+                $("#chkIsActive").prop('checked', false);
+            }
+            $("#BannerModel").modal("show");
+        },
+        error: function () {
+            debugger;
+        },
+        //complete: function () {
+        //    Hideloader();
+        //}
+    });
+}
+/*DeleteBanner*/
+function DeleteBanner(id) {
+    var reqBanner = {
+        Id: id
+    }
+    if (confirm("If you want to delete this row ?")) {
+        $.ajax({
+            url: mController + '/DeleteBanner',
+            data: reqBanner,
+            type: 'POST',
+            success: function (data) {
+                debugger;
+                console.log(data);
+                $("#BannerModel").modal("hide");
+                GetBannerListData();
+            },
+            error: function () {
+                debugger;
+                console.log("error");
+            },
+        });
+    }
+}
+
+/*Crud start in Procmas*/
+
+/*View Procmas*/
+function ProcmasResetData() {
+    $(".criteria :input").val('');
+    GetProcmasListData();
+}
+function GetProcmasListData(pageno) {
+    debugger;
+    var reqBanner = {
+        Procgroup: $("#txtSearchProcgroup").val(),
+        Procnm: $("#txtSearchProcnm").val(),
+        pageno: pageno,
+    }
+    $.ajax({
+        url: mController + '/GetProcmasData',
+        data: reqBanner,
+        type: 'POST',
+        async: true,
+        //beforeSend: function () {
+        //    Showloader();
+        //},
+        success: function (data) {
+            console.log(data);
+            var response = data.lstProcmasModel;
+            var html = "";
+            $("#ProcmasListData").empty();
+            if (response.length > 0) {
+                var Totalrecord = response[0].TotalRecords;
+                var Srno = 1;
+                for (var i = 0; i < response.length; i++) {
+                    html += "<tr>";
+                    html += "<td>" + (i + Srno) + "</td>";
+                    html += "<td>" + response[i].Procgroup + "</td>";
+                    html += "<td>" + response[i].Proccd + "</td>";
+                    html += "<td>" + response[i].Procnm + "</td>";
+                    html += "<td>" + response[i].Shortnm + "</td>";
+                    html += "<td>" + response[i].Ord + "</td>";
+                    //html += "<td>" + response[i].Status + "</td>";
+                    html += "<td>" + response[i].Fancy_Color_Status + "</td>";
+                    html += "<td>" + response[i].IsChangeable + "</td>";
+                    html += "<td>" + response[i].Fancy_Color + "</td>";
+                    html += "<td>" + response[i].Fancy_Intensity + "</td>";
+                    html += "<td>" + response[i].Fancy_Overtone + "</td>";
+                    html += "<td>" + response[i].F_CTS + "</td>";
+                    html += "<td>" + response[i].T_CTS + "</td>";
+                    html += "<td>" + response[i].IsActive + "</td>";
+                    html += "<td><a href='#' onclick='OpenEditProcmasForm(" + response[i].Id + ")'>Edit</a>&nbsp;<a href='#' onclick='DeleteProcmas(" + response[i].Id + ")'>Delete</a></td>";
+                    html += "</tr>";
+                }
+                $("#ProcmasListData").append(html);
+                ProcmasrPagination(10, Totalrecord);
+            }
+        },
+        error: function () {
+
+        },
+        complete: function () {
+            //Hideloader();
+        }
+    });
+}
+function ProcmasrPagination(pagesize, totalrecord) {
+
+    pageSize = pagesize;
+
+    var pageCount = totalrecord / pageSize;
+    $("#pagenation").empty();
+    for (var i = 0 ; i < pageCount; i++) {
+        var indx = i + 1;
+        $("#pagenation").append('<li><a href="#" class="page-link" onclick="GetProcmasListData(' + indx + ')">' + indx + '</a></li> ');
+    }
+    $("#TotalRecords").text('Total Records :' + totalrecord);
+    $("#pagenation li").first().find("a").addClass("current");
+}
+
+/*Insert Procmas*/
+function SaveProcmas() {
+    var ProcmasData = {
+        Id: $("#hdnProcmasId").val(),
+        Procgroup: $("#txtProcgroup").val(),
+        Proccd: $("#txtProccd").val(),
+        Procnm: $("#txtProcnm").val(),
+        Shortnm: $("#txtShortnm").val(),
+        Ord: $("#txtOrder").val(),
+        // Status: $("#txtStatus").val(),
+        Fancy_Color_Status: $("#txtFancy_Color_Status").val(),
+        IsChangeable: $("#txtIsChangeable").val(),
+        Fancy_Color: $("#txtFancy_Color").val(),
+        Fancy_Intensity: $("#txtFancy_Intensity").val(),
+        Fancy_Overtone: $("#txtFancy_Overtone").val(),
+        F_CTS: $("#txtF_CTS").val(),
+        T_CTS: $("#txtT_CTS").val(),
+        IsActive: $("#chkIsActive").is(":checked")
+    }
+    $.ajax({
+        url: mController + '/SaveProcmas',
+        data: ProcmasData,
+        type: 'POST',
+        success: function (data) {
+            debugger;
+            console.log(data);
+            $("#ProcmasModel").modal("hide");
+            GetProcmasListData();
+        },
+        error: function () {
+            debugger;
+            console.log("error");
+        },
+    });
+}
+/*Edit Procmas*/
+function OpenEditProcmasForm(id) {
+    $.ajax({
+        url: mController + '/GetProcmasManageData',
+        data: 'id=' + $.trim(id),
+        type: 'POST',
+        async: true,
+        //beforeSend: function () {
+        //    Showloader();
+        //},
+        success: function (data) {
+            debugger;
+            console.log(data);
+            var response = data.objProcmasModel;
+            var Procgroup = response.Procgroup;
+            var Proccd = response.Proccd;
+            var Procnm = response.Procnm;
+            var Shortnm = response.Shortnm;
+            var Ord = response.Ord;
+            var Fancy_Color_Status = response.Fancy_Color_Status;
+            var IsChangeable = response.IsChangeable;
+            var Fancy_Color = response.Fancy_Color;
+            var Fancy_Intensity = response.Fancy_Intensity;
+            var Fancy_Overtone = response.Fancy_Overtone;
+            var F_CTS = response.F_CTS;
+            var T_CTS = response.T_CTS;
+            var IsActive = response.IsActive;
+            $("#hdnProcmasId").val(response.Id);
+            $("#txtProcgroup").val(Procgroup);
+            $("#txtProccd").val(Proccd);
+            $("#txtProcnm").val(Procnm);
+            $("#txtShortnm").val(Shortnm);
+            $("#txtOrder").val(Ord);
+            // Status: $("#txtStatus").val();
+            $("#txtFancy_Color_Status").val(Fancy_Color_Status);
+            $("#txtIsChangeable").val(IsChangeable);
+            $("#txtFancy_Color").val(Fancy_Color);
+            $("#txtFancy_Intensity").val(Fancy_Intensity);
+            $("#txtFancy_Overtone").val(Fancy_Overtone);
+            $("#txtF_CTS").val(F_CTS);
+            $("#txtT_CTS").val(T_CTS);
+            if (IsActive == true) {
+                $("#chkIsActive").prop('checked', true);
+            } else {
+                $("#chkIsActive").prop('checked', false);
+            }
+            $("#ProcmasModel").modal("show");
+        },
+        error: function () {
+            debugger;
+        },
+        //complete: function () {
+        //    Hideloader();
+        //}
+    });
+}
+/*Delete Procmas*/
+function DeleteProcmas(id) {
+    var reqProcmas = {
+        Id: id,
+    }
+    if (confirm("If you want to delete this row ?")) {
+        $.ajax({
+            url: mController + '/DeleteProcmas',
+            data: reqProcmas,
+            type: 'POST',
+            success: function (data) {
+                debugger;
+                console.log(data);
+                $("#ProcmasModel").modal("hide");
+                GetProcmasListData();
+            },
+            error: function () {
+                debugger;
+                console.log("error");
+            },
+        });
+    }
+}
+/*Crud End in Procmas*/
+
+/*Crud Start in ClientMaster */
+function ClientMasterResetData() {
+    $(".criteria :input").val('');
+    GetClientMasterListData();
+}
+function GetClientMasterListData(pageno) {
+    debugger;
+    var reqClientMaster = {
+        FirstName: $("#txtSearchFirstName").val(),
+        EmailID1: $("#txtSearchEmail").val(),
+        Status: $("#txtSearchStatus").val(),
+        pageno: pageno,
+
+    }
+    $.ajax({
+        url: mController + '/GetClientMasterData',
+        data: reqClientMaster,
+        type: 'POST',
+        async: true,
+        //beforeSend: function () {
+        //    Showloader();
+        //},
+        success: function (data) {
+            console.log(data);
+            debugger;
+            var response = data.lstClientMasterModel;
+            var html = "";
+            $("#ClientMasterData").empty();
+            if (response.length > 0) {
+                var Totalrecord = response[0].TotalRecords;
+                var Srno = 1;
+                for (var i = 0; i < response.length; i++) {
+                    html += "<tr>";
+                    html += "<td>" + (i + Srno) + "</td>";
+                    html += "<td>" + response[i].ClientCd + "</td>";
+                    html += "<td>" + response[i].LoginName + "</td>";
+                    html += "<td>" + response[i].Password + "</td>";
+                    html += "<td>" + response[i].Title + "</td>";
+                    html += "<td>" + response[i].FirstName + "</td>";
+                    html += "<td>" + response[i].LastName + "</td>";
+                    html += "<td>" + response[i].strBirthdate + "</td>";
+                    html += "<td>" + response[i].CompanyNm + "</td>";
+                    html += "<td>" + response[i].Designation + "</td>";
+                    html += "<td>" + response[i].Terms + "</td>";
+                    html += "<td>" + response[i].CreditDays + "</td>";
+                    html += "<td>" + response[i].Commission + "</td>";
+                    html += "<td>" + response[i].Brokerage + "</td>";
+                    html += "<td>" + response[i].PriceDiscount + "</td>";
+                    html += "<td>" + response[i].Discount + "</td>";
+                    html += "<td>" + response[i].PriceFormat + "</td>";
+                    html += "<td>" + response[i].TaxDetails + "</td>";
+                    html += "<td>" + response[i].ReferenceFrom + "</td>";
+                    html += "<td>" + response[i].ReferenceThrough + "</td>";
+                    html += "<td>" + response[i].Address + "</td>";
+                    html += "<td>" + response[i].City + "</td>";
+                    html += "<td>" + response[i].State + "</td>";
+                    html += "<td>" + response[i].Zipcode + "</td>";
+                    html += "<td>" + response[i].Countrycd + "</td>";
+                    html += "<td>" + response[i].Phone_Countrycd + "</td>";
+                    html += "<td>" + response[i].Phone_STDcd + "</td>";
+                    html += "<td>" + response[i].Phone_No + "</td>";
+                    html += "<td>" + response[i].Phone_Countrycd2 + "</td>";
+                    html += "<td>" + response[i].Phone_STDCd2 + "</td>";
+                    html += "<td>" + response[i].Phone_No2 + "</td>";
+                    html += "<td>" + response[i].Fax_Countrycd + "</td>";
+                    html += "<td>" + response[i].Fax_STDCd + "</td>";
+                    html += "<td>" + response[i].Fax_No + "</td>";
+                    html += "<td>" + response[i].Mobile_CountryCd + "</td>";
+                    html += "<td>" + response[i].Mobile_No + "</td>";
+                    html += "<td>" + response[i].EmailID1 + "</td>";
+                    html += "<td>" + response[i].EmailID2 + "</td>";
+                    html += "<td>" + response[i].EmailID3 + "</td>";
+                    html += "<td>" + response[i].All_EmailId + "</td>";
+                    html += "<td>" + response[i].Website + "</td>";
+                    html += "<td>" + response[i].BussinessType + "</td>";
+                    html += "<td>" + response[i].strInsertedDate + "</td>";
+                    html += "<td>" + response[i].CreatedBy + "</td>";
+                    html += "<td>" + response[i].strUpdatedDate + "</td>";
+                    html += "<td>" + response[i].UpdatedBy + "</td>";
+                    html += "<td>" + response[i].ApproveStatus + "</td>";
+                    html += "<td>" + response[i].strApproveStatusOn + "</td>";
+                    html += "<td>" + response[i].ApproveStatusBy + "</td>";
+                    html += "<td>" + response[i].strStatusUpdatedOn + "</td>";
+                    html += "<td>" + response[i].StatusUpdatedBy + "</td>";
+                    html += "<td>" + response[i].Status + "</td>";
+                    html += "<td>" + response[i].WholeStockAccess + "</td>";
+                    html += "<td>" + response[i].BankDetails + "</td>";
+                    html += "<td>" + response[i].RoutingDetails + "</td>";
+                    html += "<td>" + response[i].Handle_Location + "</td>";
+                    html += "<td>" + response[i].Smid + "</td>";
+                    html += "<td>" + response[i].EmailStatus + "</td>";
+                    html += "<td>" + response[i].strLastLoginDate + "</td>";
+                    html += "<td>" + response[i].SkypeId + "</td>";
+                    html += "<td>" + response[i].QQId + "</td>";
+                    html += "<td>" + response[i].EmailSubscr + "</td>";
+                    html += "<td>" + response[i].strEmailSubscrDate + "</td>";
+                    html += "<td>" + response[i].UtypeId + "</td>";
+                    html += "<td>" + response[i].UserRights + "</td>";
+                    html += "<td>" + response[i].UploadInventory + "</td>";
+                    html += "<td>" + response[i].Show_HoldedStock + "</td>";
+                    html += "<td>" + response[i].strLoginMailAlertOn + "</td>";
+                    html += "<td>" + response[i].Show_CertImage + "</td>";
+                    html += "<td>" + response[i].App_Id + "</td>";
+                    html += "<td>" + response[i].App_Pwd + "</td>";
+                    html += "<td>" + response[i].WeChatId + "</td>";
+                    html += "<td>" + response[i].Client_Grade + "</td>";
+                    html += "<td>" + response[i].WatchList_Priority + "</td>";
+                    html += "<td>" + response[i].ShipmentType + "</td>";
+                    html += "<td>" + response[i].SecurityPin + "</td>";
+                    html += "<td>" + response[i].Online_ClientCd + "</td>";
+                    html += "<td>" + response[i].Online_SellerCd + "</td>";
+                    html += "<td>" + response[i].IsActive + "</td>";
+                    html += "<td>" + response[i].IsDeleted + "</td>";
+                    html += "<td><a href='#' onclick='OpenEditClientMasterForm(" + response[i].ClientCd + ")'>Edit</a>&nbsp;<a href='#' onclick='DeleteClientMaster(" + response[i].ClientCd + ")'>Delete</a></td>";
+                    html += "</tr>";
+                }
+                $("#ClientMasterData").append(html);
+
+                ClientMasterPagination(10, Totalrecord);
+            }
+        },
+        error: function () {
+        },
+        //complete: function () {
+        //    Hideloader();
+        //} 
+    });
+}
+
+function SaveClientMaster() {
+    debugger;
+    var ProcmasData = {
+        ClientCd: $("#hdnClientMasteId").val(),
+        LoginName: $("#txtLoginName").val(),
+        Password: $("#txtPassword").val(),
+        Title: $("#txtTitle").val(),
+        FirstName: $("#txtFirstname").val(),
+        LastName: $("#txtLastname").val(),
+        Birthdate: $("#txtBirthDate").val(),
+        CompanyNm: $("#txtCompnyName").val(),
+        Designation: $("#txtDesignation").val(),
+        Discount: $("#txtDiscount").val(),
+        Address: $("#txtAddress").val(),
+        City: $("#txtCity").val(),
+        State: $("#txtState").val(),
+        Zipcode: $("#txtZipcode").val(),
+        Phone_No: $("#txtPhone_No").val(),
+        Mobile_No: $("#txtMobile_No").val(),
+        EmailID1: $("#txtEmailId1").val(),
+        Website: $("#txtWebsite").val(),
+        BussinessType: $("#txtBussiness_Type").val(),
+        Show_CertImage: $("#txtShow_CertImage").val(),
+        Status: $("#txtStatus").is(":selected")
+    }
+    $.ajax({
+        url: mController + '/SaveClientMasterModel',
+        data: ProcmasData,
+        type: 'POST',
+        success: function (data) {
+            debugger;
+            console.log(data);
+            $("#ClientMasterModel").modal("hide");
+            GetClientMasterListData();
+        },
+        error: function () {
+            debugger;
+            console.log("error");
+        },
+    });
+}
+function ClientMasterPagination(pagesize, totalrecord) {
+    pageSize = pagesize;
+
+    var pageCount = totalrecord / pageSize;
+    $("#pagenation").empty();
+    for (var i = 0 ; i < pageCount; i++) {
+        var indx = i + 1;
+        $("#pagenation").append('<li><a href="#" class="page-link" onclick="GetClientMasterListData(' + indx + ')">' + indx + '</a></li> ');
+    }
+    $("#TotalRecords").text('Total Records :' + totalrecord);
+    $("#pagenation li").first().find("a").addClass("current");
+}
+
+function OpenEditClientMasterForm(ClientCd) {
+    $.ajax({
+        url: mController + '/GetCLientMasterManageData',
+        data: 'ClientCd=' + $.trim(ClientCd),
+        type: 'POST',
+        async: true,
+        //beforeSend: function () {
+        //    Showloader();
+        //},
+        success: function (data) {
+            debugger;
+            console.log(data);
+            var response = data.objClientMasterModel;
+            var LoginName = response.LoginName;
+            var Password = response.Password;
+            var Title = response.Title;
+            var FirstName = response.FirstName;
+            var LastName = response.LastName;
+            var strBirthdate = response.strBirthdate;
+            var CompanyNm = response.CompanyNm;
+            var Designation = response.Designation;
+            var Discount = response.Discount;
+            var Address = response.Address;
+            var City = response.City;
+            var State = response.State;
+            var Zipcode = response.Zipcode;
+            var Phone_No = response.Phone_No;
+            var Mobile_No = response.Mobile_No;
+            var EmailID1 = response.EmailID1;
+            var Website = response.Website;
+            var BussinessType = response.BussinessType;
+            var Status = response.Status;
+            var Show_CertImage = response.Show_CertImage;
+            $("#hdnClientMasteId").val(response.ClientCd);
+            $("#txtLoginName").val(LoginName);
+            $("#txtPassword").val(Password);
+            $("#txtTitle").val(Title);
+            $("#txtFirstname").val(FirstName);
+            $("#txtLastname").val(LastName);
+            $("#txtBirthDate").val(strBirthdate);
+            $("#txtCompnyName").val(CompanyNm);
+            $("#txtDesignation").val(Designation);
+            $("#txtDiscount").val(Discount);
+            $("#txtAddress").val(Address);
+            $("#txtCity").val(City);
+            $("#txtState").val(State);
+            $("#txtZipcode").val(Zipcode);
+            $("#txtPhone_No").val(Phone_No);
+            $("#txtMobile_No").val(Mobile_No);
+            $("#txtEmailId1").val(EmailID1);
+            $("#txtWebsite").val(Website);
+            $("#txtBussiness_Type").val(BussinessType);
+            $("#txtStatus").val(Status);
+            //if (status == true) {
+            //    $("#txtStatus").prop('select', true);
+            //} else {
+            //    $("#txtStatus").prop('select', false);
+            //}
+            $("#txtShow_CertImage").val(Show_CertImage);
+
+            $("#ClientMasterModel").modal("show");
+        },
+        error: function () {
+            debugger;
+        },
+        //complete: function () {
+        //    Hideloader();
+        //}
+    });
+}
+
+function DeleteClientMaster(ClientCd) {
+    var reqClientMaster = {
+        ClientCd: ClientCd,
+    }
+    if (confirm("If you want to delete this row ?")) {
+        $.ajax({
+            url: mController + '/DeleteClientMaster',
+            data: reqClientMaster,
+            type: 'POST',
+            success: function (data) {
+                debugger;
+                console.log(data);
+                //$("#ProjectModal").modal("hide");
+                GetClientMasterListData();
+            },
+            error: function () {
+                debugger;
+                console.log("error");
+            },
+        });
+    }
+}
+
+/*Crud End in ClientMaster */
+
+
+
+function OpenAddForm() {
+    debugger;
+    /*Banner*/
+    $("#hdnBannerId").val('');
+    $("#BannerModel :input").val('');
+    $("#BannerModel").modal("show");
+
+    /*Procmas*/
+    $("#hdnProcmasId").val('');
+    $("#ProcmasModel :input").val('');
+    $("#ProcmasModel").modal("show");
+
+    /*ClientMaster*/
+    $("#hdnClientMasteId").val('');
+    $("#ClientMasterModel :input").val('');
+    $("#ClientMasterModel").modal("show");
+}
+

@@ -1,0 +1,276 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WizardRegistration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link href="/ThemeContent/wizard_Form/fonts/material-design-iconic-font/css/material-design-iconic-font.css" rel="stylesheet" />
+
+    <!-- DATE-PICKER -->
+    <link href="/ThemeContent/wizard_Form/vendor/date-picker/css/datepicker.min.css" rel="stylesheet" />
+
+    <!-- STYLE CSS -->
+    <link href="/ThemeContent/wizard_Form/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <form action="" id="wizard">
+            <!-- SECTION 1 -->
+            <h4></h4>
+            <section>
+                <h3><i class="fa fa-user-circle-o"></i>Account Details</h3>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">Email Id</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-email"></i>@*account-o*@
+                            <input class="form-control" type="email" id="txtEmailID1" name="txtEmailID1" placeholder="Email Id">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">Password</label>
+                        <div class="form-holder password">
+                            <i class="zmdi zmdi-eye"></i>
+                            <input type="password" name="txtPassword" class="form-control" id="txtPassword" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">Confirm Password</label>
+                        <div class="form-holder password">
+                            <i class="zmdi zmdi-eye"></i>
+                            <input id="txtconfirmPwd" name="txtconfirmPwd" type="password" class="form-control" />
+                        </div>
+                    </div>
+                    @*<div class="form-col">
+                            <label for="">
+                                Phone Number
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-smartphone-android"></i>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>*@
+                </div>
+                @*<div class="form-row">
+                        <div class="form-col">
+                            <label for="">
+                                specialization
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-spellcheck"></i>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label for="">
+                                date of birth
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-calendar"></i>
+                                <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="dd - mm - yyyy" id="dp1">
+                            </div>
+                        </div>
+                    </div>*@
+            </section>
+
+            <!-- SECTION 2 -->
+            <h4></h4>
+            <section>
+                <h3>Personal Details</h3>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">Title</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account-o"></i>
+                            <select class="form-control" id="txtTitle" name="txtTitle">
+                                <option class="option" value="" selected hidden disabled>Select</option>
+                                <option class="option" value="Mr.">Mr.</option>
+                                <option class="option" value="Mrs.">Mrs.</option>
+                                <option class="option" value="Miss.">Miss.</option>
+                            </select>
+                            <i class="zmdi zmdi-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">Firstname</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-pin"></i>
+                            <input type="text" class="form-control" id="txtFirstname" name="txtFirstname">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">Lastname</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-home"></i>
+                            <input type="text" class="form-control" id="txtLastname" name="txtLastname">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">Business Type</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account-o"></i>
+                            <select class="form-control" id="txtBusiness_Type" name="txtBusiness_Type">
+                                <option class="option" value="" selected hidden disabled>Select</option>
+                                <option class="option" value="WHOLESELLER">WHOLESELLER </option>
+                                <option class="option" value="MANUFACTURER"> MANUFACTURER </option>
+                                <option class="option" value="RETAILER"> RETAILER </option>
+                                <option class="option" value="OTHER"> OTHER </option>
+                            </select>
+                            <i class="zmdi zmdi-chevron-down"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">CompnyName</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-pin-drop"></i>
+                            <input type="text" class="form-control" id="txtCompnyName" name="txtCompnyName">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">Designation</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-pin"></i>
+                            <input type="text" class="form-control" id="txtDesignation" name="txtDesignation">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <h4></h4>
+            <section>
+                <h3>Other Information</h3>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">ReferenceThrough</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-pin"></i>
+                            <input type="text" class="form-control" id="txtReferenceThrough">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">BirthDate</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-home"></i>
+                            <input type="text" class="form-control" id="txtBirthDate" name="txtBirthDate">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">Address</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-home"></i>
+                            <input type="text" class="form-control" id="txtAddress" name="txtAddress">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">City</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account-o"></i>
+                            <input type="text" class="form-control" id="txtCity" name="txtCity">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">State</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-pin-drop"></i>
+                            <input type="text" class="form-control" id="txtState" name="txtState">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">Zipcode</label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-pin"></i>
+                            <input type="text" class="form-control" id="txtZipcode" name="txtZipcode">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4 -->
+            <h4></h4>
+            <section>
+                <h3></h3>
+                <section>
+                    <h3></h3>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="">Phone_No</label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin"></i>
+                                <input type="text" class="form-control" id="txtPhone_No" name="txtPhone_No">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label for="">Mobile_No</label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-home"></i>
+                                <input type="text" class="form-control" id="txtMobile_No" name="txtMobile_No">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="">Website</label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-home"></i>
+                                <input type="text" class="form-control" id="txtWebsite" name="txtWebsite">
+                            </div>
+                        </div>
+                        @*<div class="form-col">
+                                <label for="">City</label>
+                                <div class="form-holder">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                    <input type="text" class="form-control" id="txtCity" name="txtCity">
+                                </div>
+                            </div>*@
+                    </div>
+                    <div class="form-row">
+                        <div class="form">
+                            <input class="filled-in chk-col-dark" type="checkbox" id="chkTerms" value="option1">
+                            <label class="form-check-label" for="chkTerms">I have read and agree to the terms and condition</label>
+                        </div>
+                        @*<div class="form-col">
+                            <label for="">Zipcode</label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin"></i>
+                                <input type="text" class="form-control" id="txtZipcode" name="txtZipcode">
+                            </div>
+                        </div>*@
+                    </div>
+                </section>
+            </section>
+        </form>
+    </div>
+
+    <script src="~/ThemeContent/wizard_Form/js/jquery-3.3.1.min.js"></script>
+
+    <!-- JQUERY STEP -->
+    <script src="~/ThemeContent/wizard_Form/js/jquery.steps.js"></script>
+
+    <!-- DATE-PICKER -->
+    <script src="~/ThemeContent/wizard_Form/vendor/date-picker/js/datepicker.js"></script>
+    <script src="~/ThemeContent/wizard_Form/vendor/date-picker/js/datepicker.en.js"></script>
+
+    <script src="~/ThemeContent/wizard_Form/js/main.js"></script>
+</body>
+</html>
